@@ -1,4 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Food;
+import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.CropRow;
 import org.junit.Test;
 import org.junit.Assert;
 
@@ -10,9 +12,9 @@ public class EdibleFoodTests {
         Crop tomato2 = new Crop(true);
         Crop tomato3 = new Crop(true);
 
-        CropRow tomatoCropRow = new CropRow(true, true);
+        CropRow<Crop> tomatoCropRow = new CropRow<>(true, true);
 
-        tomatoCropRow.add(tomato1, tomato2, tomato3);
+        tomatoCropRow.addCrop(tomato1, tomato2, tomato3);
 
         Integer expectedTomatoCropYield = 3;
         Integer actualTomatoCropRowYield = tomatoCropRow.yield();
