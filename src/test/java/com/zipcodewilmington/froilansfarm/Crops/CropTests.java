@@ -1,4 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Crops;
+import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.Produce;
 import org.junit.Test;
 import org.junit.Assert;
 
@@ -20,7 +22,7 @@ public class CropTests {
         Crop cornStalk = new Crop(false);
         froilan.plant(cornStalk);
 
-        Boolean hasBeenPlanted = cornStalk.getHasBeenPlanted;
+        Boolean hasBeenPlanted = cornStalk.getHasBeenPlanted();
 
         Assert.assertTrue(hasBeenPlanted);
     }
@@ -29,7 +31,7 @@ public class CropTests {
     public void getHasBeenPlantedTest3() {
         Crop potatoRoot = new Crop(false);
 
-        Boolean hasBeenPlanted = potatoRoot.getHasBeenPlanted;
+        Boolean hasBeenPlanted = potatoRoot.getHasBeenPlanted();
 
         Assert.assertFalse(hasBeenPlanted);
     }
@@ -81,42 +83,26 @@ public class CropTests {
 
     @Test
     public void cropInstanceOfProduceTest() {
-        (Produce) crop = (Produce) (Object) new Crop();
+        Crop crop = new Crop();
         Assert.assertTrue(crop instanceof Produce);
     }
 
     @Test
     public void tomatoPlantInstanceOfProduceTest() {
-        (Produce) tomatoPlant = (Produce) (Object) new Crop();
+        Crop tomatoPlant = new Crop();
         Assert.assertTrue(tomatoPlant instanceof Produce);
     }
 
     @Test
     public void cornStalkInstanceOfProduceTest() {
-        (Produce) cornStalk = (Produce) (Object) new Crop();
+        Crop cornStalk = new Crop();
         Assert.assertTrue(cornStalk instanceof Produce);
     }
 
     @Test
     public void potatoRootInstanceOfProduceTest() {
-        (Produce) potatoRoot = (Produce) (Object) new Crop();
+        Crop potatoRoot = new Crop();
         Assert.assertTrue(potatoRoot instanceof Produce);
     }
 
-    public void tomatoPlantInstanceOfCropTest() {
-        (Crop) tomatoPlant = (Crop) (Object) new TomoatoPlant();
-        Assert.assertTrue(tomatoPlant instanceof Crop);
-    }
-
-    @Test
-    public void cornStalkInstanceOfCropTest() {
-        (Crop) cornStalk = (Crop) (Object) new cornStalk();
-        Assert.assertTrue(cornStalk instanceof Crop);
-    }
-
-    @Test
-    public void potatoRootInstanceOfCropTest() {
-        (Crop) potatoRoot = (Crop) (Object) new potatoRoot();
-        Assert.assertTrue(potatoRoot instanceof Crop);
-    }
 }
