@@ -1,5 +1,9 @@
 package com.zipcodewilmington.froilansfarm.PersonTest;
 
+import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
+import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.Persons.Person;
+import com.zipcodewilmington.froilansfarm.Persons.Pilot;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,6 +13,18 @@ public class PilotTest {
     public void TestInheritance(){
         Person pilot =(Person)(Object) new Pilot("pilot");
         Assert.assertTrue(pilot instanceof Person);
+    }
+
+    @Test
+    public void TestPilotInterface(){
+        Person pilot =(Person)(Object) new Pilot("Farmer1");
+        Assert.assertTrue(pilot instanceof NoiseMaker);
+    }
+
+    @Test
+    public void TestPilotInterface1(){
+        Person pilot =(Person)(Object) new Pilot("Farmer1");
+        Assert.assertTrue(pilot instanceof Eater);
     }
 
     @Test
