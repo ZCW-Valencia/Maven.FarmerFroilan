@@ -3,12 +3,12 @@ package com.zipcodewilmington.froilansfarm.Persons;
 //import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.Interfaces.Botanist;
+import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 import com.zipcodewilmington.froilansfarm.Produce;
 import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 
 public class Farmer extends Person implements Rider, Botanist {
-    Tractor tractor = new Tractor();
 
     public Farmer(String name) {
         super(name);
@@ -16,17 +16,10 @@ public class Farmer extends Person implements Rider, Botanist {
 
     @Override
     public void eat(Produce food, int amount) {
-
     }
-
     @Override
     public boolean hasEaten() {
         return true;
-    }
-
-    @Override
-    public void makesNoise() {
-
     }
 
     @Override
@@ -35,17 +28,24 @@ public class Farmer extends Person implements Rider, Botanist {
     }
 
     @Override
-    public boolean mount(T ride) {
-        return false;
+    public String makeNoise() {
+        return null;
+    }
+    @Override
+    public boolean mount(Rideable ride) {
+        ride.setIsMounted(ride);
+        return ride.getIsMounted();
     }
 
     @Override
-    public boolean ride(T ride) {
-        return false;
+    public boolean ride(Rideable ride) {
+        ride.setIsBeingRidden(ride);
+        return ride.getIsBeingRidden();
     }
 
     @Override
-    public boolean disMount(T ride) {
-        return false;
+    public boolean dismount(Rideable ride) {
+        ride.setIsDismounted(ride);
+        return ride.getIsDismounted();
     }
 }

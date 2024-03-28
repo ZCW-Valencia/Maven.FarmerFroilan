@@ -14,37 +14,13 @@ public class CropDuster <T> extends FarmVehicle implements AirCraft {
         this.isDismounted = isDismounted;
     }
 
-    public boolean isMounted() {
-        return isMounted;
-    }
 
-    public void setMounted(boolean mounted) {
-        isMounted = mounted;
-    }
-
-    public boolean isBeingRidden() {
-        return isBeingRidden;
-    }
-
-    public void setBeingRidden(boolean beingRidden) {
-        isBeingRidden = beingRidden;
-    }
-
-    public boolean isDismounted() {
-        return isDismounted;
-    }
-
-    public void setDismounted(boolean dismounted) {
-        isDismounted = dismounted;
-    }
-
-    public boolean fertillize(T cropRow, boolean hasBeenPlanted){
-        if(this.isBeingRidden == true && hasBeenPlanted == true){
+    public boolean fertilize(T cropRow){
+        if(this.isBeingRidden == true){
             return true;
         }
         return false;
     }
-
     @Override
     public boolean flying(){
         if(this.isBeingRidden == true){
@@ -52,13 +28,40 @@ public class CropDuster <T> extends FarmVehicle implements AirCraft {
         }
         return false;
     }
-
     @Override
     public String makeNoise(){
         return "CropDuster noiseeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
     }
 
+    @Override
+    public boolean getIsMounted() {
+        return isMounted;
+    }
 
+    @Override
+    public boolean getIsBeingRidden() {
+        return isBeingRidden;
+    }
 
+    @Override
+    public boolean getIsDismounted() {
+        return isDismounted;
+    }
 
+    @Override
+    public void setIsMounted(Object ride) {
+        isMounted = true;
+        isDismounted = false;
+    }
+
+    @Override
+    public void setIsBeingRidden(Object ride) {
+        isBeingRidden = true;
+    }
+
+    @Override
+    public void setIsDismounted(Object ride) {
+        isDismounted = true;
+        isMounted = false;
+    }
 }

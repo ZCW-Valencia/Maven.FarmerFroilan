@@ -1,7 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+import com.zipcodewilmington.froilansfarm.Persons.Pilot;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
+import org.junit.Assert;
 
 public class CropDusterTest {
 
