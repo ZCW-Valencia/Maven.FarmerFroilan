@@ -85,8 +85,9 @@ public class VehicleCropDuster {
         CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
         Field field = new Field(false, false, false); //hasBeenPlanted, hasBeenFertilized, hasBeenHarvested
 
-        Assert.assertFalse(cropDuster.harvest(t cropRow, field.getHasBeenPlanted(), this.IsBeingRidden));
+        Assert.assertFalse(cropDuster.harvest(t cropRow, field.getHasBeenPlanted()));
         // doesnt matter which crop, if either hasBeenPlanted or isBeingRidden is false, whole thing false
+        //this.IsBeingRidden is going to called in the method, no need as para
     }
 
     @Test
@@ -95,8 +96,9 @@ public class VehicleCropDuster {
         Field field = new Field(false, false, false); //hasBeenPlanted, hasBeenFertilized, hasBeenHarvested
         field.setHasBeenPlanted(true);
 
-        Assert.assertFalse(cropDuster.harvest(t cropRow, field.getHasBeenPlanted(), this.IsBeingRidden));
+        Assert.assertFalse(cropDuster.harvest(t cropRow, field.getHasBeenPlanted()));
         // doesnt matter which crop, if either hasBeenPlanted or isBeingRidden is false, whole thing false
+        //this.IsBeingRidden is going to called in the method, no need as para
     }
 
     @Test
@@ -106,8 +108,9 @@ public class VehicleCropDuster {
         Pilot froilanda = new Pilot("Froilanda", false);    //name and isFlying
         cropDuster.setIsBeingRidden(froilanda.ride());
 
-        Assert.assertFalse(cropDuster.harvest(t cropRow, field.getHasBeenPlanted(), this.IsBeingRidden));
+        Assert.assertFalse(cropDuster.harvest(t cropRow, field.getHasBeenPlanted()));
         // doesnt matter which crop, if either hasBeenPlanted or isBeingRidden is false, whole thing false
+        //this.IsBeingRidden is going to called in the method, no need as para
     }
 
     @Test
@@ -118,7 +121,8 @@ public class VehicleCropDuster {
         Pilot froilanda = new Pilot("Froilanda", false);    //name and isFlying
         cropDuster.setIsBeingRidden(froilanda.ride());
 
-        Assert.assertTrue(cropDuster.harvest(t cropRow, field.getHasBeenPlanted(), this.IsBeingRidden));
-        
+        Assert.assertTrue(cropDuster.harvest(t cropRow, field.getHasBeenPlanted()));
+        //this.IsBeingRidden is going to called in the method, no need as para
+
     }
 }
