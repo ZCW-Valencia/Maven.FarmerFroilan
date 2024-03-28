@@ -3,7 +3,7 @@ package com.zipcodewilmington.froilansfarm.Vehicle;
 import org.junit.Test;
 import sun.jvm.hotspot.utilities.Assert;
 
-public class VehicleTractor {
+public class Tractor {
 
     //Tractor Inheritance test
     @Test
