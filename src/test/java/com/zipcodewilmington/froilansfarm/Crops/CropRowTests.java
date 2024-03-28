@@ -106,4 +106,28 @@ public class CropRowTests {
         Assert.assertFalse(hasBeenHarvested);
     }
 
+    @Test
+    public void cropRowInstanceOfCropTest() {
+        (Crop) cropRow = (Crop) (Object) new CropRow();
+        Assert.assertTrue(cropRow instanceof Crop);
+    }
+
+    @Test
+    public void tomatoCropRowInstanceOfCropTest() {
+        (Crop) tomatoCropRow = (Crop) (Object) new CropRow();
+        Assert.assertTrue(tomatoCropRow instanceof Crop);
+    }
+
+    @Test
+    public void cornCropRowInstanceOfCropTest() {
+        (Crop) cornCropRow = (Produce) (Object) new CropRow();
+        Assert.assertTrue(cornCropRow instanceof Crop);
+    }
+
+    @Test
+    public void potatoCropRowInstanceOfCropTest() {
+        (Crop) potatoCropRow = (Crop) (Object) new CropRow();
+        Assert.assertTrue(potatoCropRow instanceof Crop);
+    }
+
 }
