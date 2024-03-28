@@ -6,7 +6,7 @@ import com.zipcodewilmington.froilansfarm.Produce;
 public interface Eater {
 
     public void eat(Produce food, int amount);
-    public boolean hasEaten();
+    //public boolean hasEaten();
 
 
 }

@@ -2,6 +2,8 @@ package com.zipcodewilmington.froilansfarm.AnimalTests;
 
 import com.zipcodewilmington.froilansfarm.Animals.Animal;
 import com.zipcodewilmington.froilansfarm.Animals.Chicken;
+import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
+import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Produce;
 import org.junit.Assert;
 import org.junit.Test;

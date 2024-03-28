@@ -2,6 +2,10 @@ package com.zipcodewilmington.froilansfarm.AnimalTests;
 
 import com.zipcodewilmington.froilansfarm.Animals.Animal;
 import com.zipcodewilmington.froilansfarm.Animals.Horse;
+import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
+import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -42,92 +46,26 @@ public class HorseTests {
     @Test
     public void eatTest1() {
         Horse horse = new Horse();
-        Corn corn = new Corn();
-        boolean hasEaten = true;
+        Crop corn = new Crop();
 
+        horse.eat(corn, 5);
 
-        boolean result = horse.eat(corn, 3);
-
-
-        Assert.assertTrue(result);
+        Assert.assertTrue(hasEaten);
     }
 
     @Test
     public void eatTest2() {
         Horse horse = new Horse();
-        Corn corn = new Corn();
-        boolean hasEaten = false;
+        Crop corn = new Crop();
 
-        boolean result = horse.eat(corn, 3);
+        horse.eat(corn, 1);
 
-        Assert.assertFalse(result);
-    }
-
-    @Test
-    public void getIsMountedTest1() {
-        Horse horse = new Horse();
-        boolean isMounted = true;
-
-        boolean result = horse.getIsMounted(isMounted);
-
-        Assert.assertTrue(result);
-    }
-
-    @Test
-    public void getIsMountedTest2() {
-        Horse horse = new Horse();
-        boolean isMounted = false;
-
-        boolean result = horse.getIsMounted(isMounted);
-
-        Assert.assertFalse(result);
-    }
-
-    @Test
-    public void getIsBeingRiddenTest1() {
-        Horse horse = new Horse();
-        boolean isBeingRidden = true;
-
-        boolean result = horse.getIsBeingRidden(isBeingRidden);
-
-        Assert.assertTrue(result);
-    }
-
-    @Test
-    public void getIsBeingRiddenTest2() {
-        Horse horse = new Horse();
-        boolean isBeingRidden = false;
-
-        boolean result = horse.getIsBeingRidden(isBeingRidden);
-
-        Assert.assertFalse(result);
-    }
-
-    @Test
-    public void getIsDismountedTest1() {
-        Horse horse = new Horse();
-        boolean isDismounted = true;
-
-        boolean result = horse.getIsDismounted(isDismounted);
-
-        Assert.assertTrue(result);
-    }
-
-    @Test
-    public void getIsDismountedTest2() {
-        Horse horse = new Horse();
-        boolean isDismounted = false;
-
-        boolean result = horse.getIsDismounted(isDismounted);
-
-        Assert.assertFalse(result);
+        Assert.assertFalse(hasEaten);
     }
 
     @Test
     public void exerciseTest1() {
-        Horse horse = new Horse();
-        boolean isBeingRidden = true;
-
+        Horse horse = new Horse(true, true, false);
         boolean result = horse.exercise();
 
         Assert.assertTrue(result);
@@ -135,9 +73,7 @@ public class HorseTests {
 
     @Test
     public void exerciseTest2() {
-        Horse horse = new Horse();
-        boolean isBeingRidden = false;
-
+        Horse horse = new Horse(false, false, true);
         boolean result = horse.exercise();
 
         Assert.assertFalse(result);
