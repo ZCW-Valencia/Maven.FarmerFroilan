@@ -5,13 +5,14 @@ import org.junit.Test;
 
 public class StableTest {
     private Stable stable;
+
     @Before
-    public void setUp(){
+    public void setUp() {
         stable = new Stable();
     }
 
     @Test
-    public void testAddHorse(){ //Add Horse Stable Test
+    public void testAddHorse() { //Add Horse Stable Test
         Horse horse1 = new Horse();
         Horse horse2 = new Horse();
 
@@ -23,7 +24,7 @@ public class StableTest {
     }
 
     @Test
-    public void testRemoveHorse(){ //Remove Horse Stable Test
+    public void testRemoveHorse() { //Remove Horse Stable Test
         Horse horse1 = new Horse();
 
         stable.add(horse1);
@@ -33,7 +34,7 @@ public class StableTest {
     }
 
     @Test
-    public void testGetHorse(){ //Get Horse Stable Test
+    public void testGetHorse() { //Get Horse Stable Test
         Horse horse1 = new Horse();
         Horse horse2 = new Horse();
         Horse horse3 = new Horse();
@@ -50,7 +51,7 @@ public class StableTest {
     }
 
     @Test
-    public void testStableSize(){ //Stable Size Test
+    public void testStableSize() { //Stable Size Test
         Horse horse1 = new Horse();
         Horse horse2 = new Horse();
         Horse horse3 = new Horse();
@@ -63,7 +64,7 @@ public class StableTest {
     }
 
     @Test
-    public void testStableContains(){  //Stable Contains Test
+    public void testStableContains() {  //Stable Contains Test
         Horse horse1 = new Horse();
         Horse horse2 = new Horse();
 
@@ -71,6 +72,10 @@ public class StableTest {
         stable.add(horse2);
 
         Assert.assertTrue(stable.contains(horse1, horse2)); //Stable should contain horse1 and horse2
+    }
+
+    @Test
+    public void testStableExtendsHorse() { // Stable Extends Horse Test
     }
 }
 

@@ -5,13 +5,14 @@ import org.junit.Test;
 
 public class FarmTest {
     private Farm farm;
+
     @Before
     public void setUp() {
         farm = new Farm();
     }
 
     @Test
-    public void testFarmInitialization(){
+    public void testFarmInitialization() {
         Farm farm = new Farm();
 
         Assert.assertEquals(farm.getFarmHouse()); // expected 1 FarmHouse
@@ -104,4 +105,5 @@ public class FarmTest {
         Assert.assertEquals(chickencoop1, farm.get(0)); //Should retrieve/get chickencoop1 by index 0
         Assert.assertEquals(chickencoop2, farm.get(1)); //Should retrieve/get chickencoop2 by index 1
     }
+
 }
