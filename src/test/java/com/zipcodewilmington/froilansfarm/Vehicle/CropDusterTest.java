@@ -3,7 +3,14 @@ package com.zipcodewilmington.froilansfarm.Vehicle;
 import org.junit.Test;
 import sun.jvm.hotspot.utilities.Assert;
 
-public class VehicleCropDuster {
+public class CropDusterTest {
+
+    //CropDuster Inheritance test
+    @Test
+    public void cropDusterInheritanceTest1() {
+        CropDuster cropDuster = (CropDuster) (Object)new CropDuster();
+        org.junit.Assert.assertTrue(cropDuster instanceof CropDuster);
+    }
 
     //CropDuster Fields Testing
     @Test
