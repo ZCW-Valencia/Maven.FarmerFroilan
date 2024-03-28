@@ -71,8 +71,9 @@ public class VehicleTractor {
         Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
         Field field = new Field();
 
-        Assert.assertFalse(tractor.harvest(t cropRow, field.getHasBeenFertilized(), this.IsBeingRidden));
+        Assert.assertFalse(tractor.harvest(t cropRow, field.getHasBeenFertilized()));
         // doesnt matter which crop, if either hasBeenFertilized or isBeingRidden is false, whole thing false
+        //this.IsBeingRidden is going to called in the method, no need as para
     }
 
     @Test
@@ -82,8 +83,9 @@ public class VehicleTractor {
         Farmer froilan = new Farmer("Froilan");
         tractor.setIsBeingRidden(froilan.ride()); //ride() should just return true
 
-        Assert.assertFalse(tractor.harvest(t cropRow, field.getHasBeenFertilized(), this.IsBeingRidden));
+        Assert.assertFalse(tractor.harvest(t cropRow, field.getHasBeenFertilized()));
         // doesnt matter which crop, if either hasBeenFertilized or isBeingRidden is false, whole thing false
+        //this.IsBeingRidden is going to called in the method, no need as para
     }
 
     @Test
@@ -92,8 +94,9 @@ public class VehicleTractor {
         Field field = new Field(false, false, false); //hasBeenPlanted, hasBeenFertilized, hasBeenHarvested
         field.setHasBeenFertilized(true);
 
-        Assert.assertFalse(tractor.harvest(t cropRow, field.getHasBeenFertilized(), this.IsBeingRidden));
+        Assert.assertFalse(tractor.harvest(t cropRow, field.getHasBeenFertilized()));
         // doesnt matter which crop, if either hasBeenFertilized or isBeingRidden is false, whole thing false
+        //this.IsBeingRidden is going to called in the method, no need as para
     }
 
     @Test
@@ -104,7 +107,8 @@ public class VehicleTractor {
         Farmer froilan = new Farmer("Froilan");
         tractor.setIsBeingRidden(froilan.ride()); //ride() should just return true
 
-        Assert.assertTrue(tractor.harvest(t cropRow, field.getHasBeenFertilized(), this.IsBeingRidden));
+        Assert.assertTrue(tractor.harvest(t cropRow, field.getHasBeenFertilized()));
         //doesnt matter which crop, both hasBeenFertilized and isBeingRidden need to be true
+        //this.IsBeingRidden is going to called in the method, no need as para
     }
 }
