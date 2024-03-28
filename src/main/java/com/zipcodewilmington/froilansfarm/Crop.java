@@ -26,7 +26,7 @@ public class Crop implements Produce {
     }
 
     @Override
-    public int yield(Object CropRow) {
+    public int yield() {
         return 0;
     }
 }
