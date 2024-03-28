@@ -1,6 +1,9 @@
 package com.zipcodewilmington.froilansfarm.Crops;
 import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.Persons.Farmer;
+import com.zipcodewilmington.froilansfarm.Persons.Pilot;
 import com.zipcodewilmington.froilansfarm.Produce;
+import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import org.junit.Test;
 import org.junit.Assert;
 
@@ -41,11 +44,11 @@ public class CropTests {
     public void getHasBeenFertilizedTest() {
         Pilot froilanda = new Pilot("froilanda");
         Crop tomatoPlant = new Crop(true);
-        CropDuster cropDuster = new CropDuster();
+        CropDuster cropDuster = new CropDuster(false, false, false);
 
         froilanda.mount(cropDuster);
         froilanda.fly(cropDuster);
-        froilanda.fertilize(tomatoPlant);
+        cropDuster.fertilize(tomatoPlant);
 
         Boolean hasBeenFertilized = tomatoPlant.getHasBeenFertilized();
 
@@ -56,13 +59,13 @@ public class CropTests {
     public void getHasBeenFertilizedTest2() {
         Pilot froilanda = new Pilot("froilanda");
         Crop cornStalk = new Crop(true);
-        CropDuster cropDuster = new CropDuster();
+        CropDuster cropDuster = new CropDuster(false, false, false);
 
         froilanda.mount(cropDuster);
         froilanda.fly(cropDuster);
 
 
-        Boolean hasBeenFertilized = froilanda.fertilize(cropDuster);
+        Boolean hasBeenFertilized = cropDuster.fertilize(cornStalk);
 
         Assert.assertTrue(hasBeenFertilized);
     }
@@ -71,7 +74,7 @@ public class CropTests {
     public void getHasBeenFertilizedTest3() {
         Pilot froilanda = new Pilot("froilanda");
         Crop potatoRoot = new Crop(true);
-        CropDuster cropDuster = new CropDuster();
+        CropDuster cropDuster = new CropDuster(false, false, false);
 
         froilanda.mount(cropDuster);
         froilanda.fly(cropDuster);
