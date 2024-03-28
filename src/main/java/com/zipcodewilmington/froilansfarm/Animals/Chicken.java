@@ -27,13 +27,15 @@ public class Chicken extends Animal implements Produce {
     }
 
     @Override
-    public boolean eat(T food, int amount) {
-        if ()
-        return
-    }
+    public void eat(Produce food, int amount) {}
+
+    @Override
+    public boolean hasEaten() {
+    return false;
 }
 
     @Override
     public int yield() {
-        if (hasBeenFertilized) {}
+        return 0;
+    }
 }

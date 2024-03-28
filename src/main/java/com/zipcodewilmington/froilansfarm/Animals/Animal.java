@@ -1,17 +1,12 @@
 package com.zipcodewilmington.froilansfarm.Animals;
 
-public abstract class Animal implements Rideable, Eater, NoiseMaker {
-    /*
-    Needs the following instance variables:
-    bool hasEaten
+import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
+import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
+import com.zipcodewilmington.froilansfarm.Produce;
 
-    Needs the following methods:
-    makeNoise()
-    eat()
-     */
+public abstract class Animal implements Eater, NoiseMaker {
     boolean hasEaten;
 
-    abstract String makeNoise();
 
-    abstract boolean eat(T food, int amount);
 }

@@ -1,6 +1,10 @@
 package com.zipcodewilmington.froilansfarm.Animals;
 
-public class Horse extends Animal {
+import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
+import com.zipcodewilmington.froilansfarm.Persons.Farmer;
+import com.zipcodewilmington.froilansfarm.Produce;
+
+public class Horse extends Animal implements Rideable {
 //    Instance Variables
     private boolean isMounted;
     private boolean isBeingRidden;
@@ -15,27 +19,21 @@ public class Horse extends Animal {
 
 //    Methods
 
-    public boolean getIsMounted() {
-        return null;
-    }
-
-    public boolean getIsBeingRidden() {
-        return null;
-    }
-
-    public boolean getIsDismounted() {
-        return null;
-    }
-
+    @Override
     public String makeNoise() {
         return "Neigh!";
     }
 
-    public boolean eat() {
-        return null;
+    @Override
+    public boolean hasEaten() {
+        return false;
     }
 
     public boolean exercise() {
-        return null;
+        return false;
+    }
+
+    @Override
+    public void eat(Produce food, int amount) {
     }
 }

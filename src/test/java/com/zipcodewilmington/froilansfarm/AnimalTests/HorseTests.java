@@ -56,7 +56,7 @@ public class HorseTests {
         Corn corn = new Corn();
         boolean hasEaten = false;
 
-        boolean result = horse.eat();
+        boolean result = horse.eat(corn);
 
         Assert.assertFalse(result);
     }
