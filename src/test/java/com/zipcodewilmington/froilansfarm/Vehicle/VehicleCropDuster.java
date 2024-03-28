@@ -5,6 +5,13 @@ import sun.jvm.hotspot.utilities.Assert;
 
 public class VehicleCropDuster {
 
+    //CropDuster Inheritance test
+    @Test
+    public void cropDusterInheritanceTest1() {
+        CropDuster cropDuster = (CropDuster) (Object)new CropDuster();
+        org.junit.Assert.assertTrue(cropDuster instanceof CropDuster);
+    }
+
     //CropDuster Fields Testing
     @Test
     public void testIsMountedFalse(){

@@ -5,6 +5,13 @@ import sun.jvm.hotspot.utilities.Assert;
 
 public class VehicleTractor {
 
+    //Tractor Inheritance test
+    @Test
+    public void tractorInheritanceTest1() {
+        Tractor tractor = (Tractor) (Object)new Tractor();
+        org.junit.Assert.assertTrue(tractor instanceof Tractor);
+    }
+
     //Tractor Instance Fields testing
     @Test
     public void testIsMountedFalse(){
