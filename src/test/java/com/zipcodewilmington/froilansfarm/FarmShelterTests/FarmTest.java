@@ -2,7 +2,7 @@ package com.zipcodewilmington.froilansfarm.FarmShelterTests;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
+//import sun.jvm.hotspot.utilities.Assert;
 
 public class FarmTest {
     private Farm farm;

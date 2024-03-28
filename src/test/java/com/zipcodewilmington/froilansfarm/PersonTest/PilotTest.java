@@ -12,6 +12,18 @@ public class PilotTest {
     }
 
     @Test
+    public void TestPilotInterface(){
+        Person pilot =(Person)(Object) new Pilot("Farmer1");
+        Assert.assertTrue(pilot instanceof NoiseMaker);
+    }
+
+    @Test
+    public void TestPilotInterface(){
+        Person pilot =(Person)(Object) new Pilot("Farmer1");
+        Assert.assertTrue(pilot instanceof Eater);
+    }
+
+    @Test
     public void TestFly(){
         Pilot pilot = new Pilot("pilot");
         Boolean expected = false;
