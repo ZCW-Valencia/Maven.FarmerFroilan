@@ -5,6 +5,7 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Persons.Farmer;
 import com.zipcodewilmington.froilansfarm.Persons.Person;
+import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -39,24 +40,24 @@ public class FarmerTest {
     @Test
     public void TestMount(){
         Farmer farmer = new Farmer("Farmer1");
-        Tractor tractor = new Tractor();
+        Tractor tractor = new Tractor(false, false, false);
         Assert.assertTrue(farmer.mount(tractor));
     }
 
     @Test
     public void TestRide(){
         Farmer farmer = new Farmer("Farmer1");
-        Tractor tractor = new Tractor();
+        Tractor tractor = new Tractor(false, false, false);
         Assert.assertTrue(farmer.ride(tractor));
-        Assert.assertTrue(farmer.isBeingRidden());
+        Assert.assertTrue(tractor.isBeingRidden());
     }
 
     @Test
     public void TestDismount(){
         Farmer farmer = new Farmer("Farmer1");
-        Tractor tractor = new Tractor();
+        Tractor tractor = new Tractor(false, false, false);
         Assert.assertTrue(farmer.dismount(tractor));
-        Assert.assertFalse(farmer.isBeingRidden());
+        Assert.assertFalse(tractor.getIsBeingRidden());
     }
 
     @Test

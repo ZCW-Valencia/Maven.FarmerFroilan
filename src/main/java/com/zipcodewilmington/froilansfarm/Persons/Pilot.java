@@ -45,7 +45,7 @@ public class Pilot<T> extends Person implements Rider {
     }
 
     @Override
-    public boolean disMount(Rideable ride) {
+    public boolean dismount(Rideable ride) {
         return false;
     }
 }
