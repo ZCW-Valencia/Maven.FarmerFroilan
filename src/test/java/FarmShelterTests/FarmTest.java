@@ -31,7 +31,7 @@ public class FarmTest {
         farm.addStable(stable2); //Adding new stable to Farm
         farm.addStable(stable3); //Adding new stable to Farm
 
-        Assert.assertEquals(3, farm.size()); // Farm should have 3 Stable after addition
+        Assert.assertTrue(farm.getStable().contains(stable1, stable2, stable3)); // Farm should have 3 Stable after addition
     }
 
     @Test
@@ -61,9 +61,9 @@ public class FarmTest {
         farm.addStable(stable2);
         farm.addStable(stable3);
 
-        Assert.assertEquals(stable1, farm.get(0)); //Should retrieve/get stable1 by index 0
-        Assert.assertEquals(stable2, farm.get(1)); //Should retrieve/get stable2 by index 1
-        Assert.assertEquals(stable3, farm.get(2)); //Should retrieve/get stable2 by index 2
+        Assert.assertEquals(stable1, farm.getStable(0)); //Should retrieve/get stable1 by index 0
+        Assert.assertEquals(stable2, farm.getStable(1)); //Should retrieve/get stable2 by index 1
+        Assert.assertEquals(stable3, farm.getStable(2)); //Should retrieve/get stable2 by index 2
     }
 
     @Test
@@ -102,7 +102,7 @@ public class FarmTest {
         farm.addChickenCoop(chickencoop1);
         farm.addChickenCoop(chickencoop2);
 
-        Assert.assertEquals(chickencoop1, farm.get(0)); //Should retrieve/get chickencoop1 by index 0
-        Assert.assertEquals(chickencoop2, farm.get(1)); //Should retrieve/get chickencoop2 by index 1
+        Assert.assertEquals(chickencoop1, farm.getChickenCoop(0)); //Should retrieve/get chickencoop1 by index 0
+        Assert.assertEquals(chickencoop2, farm.getChickenCoop(1)); //Should retrieve/get chickencoop2 by index 1
     }
 }
