@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.PersonTest;
 
+import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Persons.Farmer;
 import com.zipcodewilmington.froilansfarm.Persons.Person;
@@ -68,9 +70,9 @@ public class FarmerTest {
     @Test
     public void TestEatFood(){
         Farmer farmer = new Farmer("person");
-        Corn corn = new Corn();
+        Crop crop = new Crop();
         int amount = 5;
-        farmer.eat(corn,amount);
+        farmer.eat(crop,amount);
         Assert.assertTrue(farmer.hasEaten());
     }
 

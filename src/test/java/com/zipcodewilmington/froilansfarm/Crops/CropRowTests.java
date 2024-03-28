@@ -1,4 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Crops;
+import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.CropRow;
+import com.zipcodewilmington.froilansfarm.Produce;
 import org.junit.Test;
 import org.junit.Assert;
 
@@ -11,10 +14,10 @@ public class CropRowTests {
         Crop tomatoPlant2 = new Crop(true);
         Crop tomatoPlant3 = new Crop(true);
         CropDuster cropDuster = new CropDuster();
-        CropRow tomatoCropRow = new CropRow(false, false);
+        CropRow<Crop> tomatoCropRow = new CropRow<>(false, false);
 
         //Overload this method when time comes
-        tomatoCropRow.add(tomatoPlant1, tomatoPlant2, tomatoPlant3);
+        tomatoCropRow.addCrop(tomatoPlant1, tomatoPlant2, tomatoPlant3);
         froilanda.mount(cropDuster);
         froilanda.fly(cropDuster);
         froilanda.fertilize(tomatoPlant);
@@ -31,10 +34,10 @@ public class CropRowTests {
         Crop cornStalk2 = new Crop(true);
         Crop cornStalk3 = new Crop(true);
         CropDuster cropDuster = new CropDuster();
-        CropRow cornCropRow = new CropRow(false, false);
+        CropRow<Crop> cornCropRow = new CropRow<>(false, false);
 
         //Overload this method when time comes
-        cornCropRow.add(cornStalk1, cornStalk2, cornStalk3);
+        cornCropRow.addCrop(cornStalk1, cornStalk2, cornStalk3);
 
         cropDuster.isBeingRidden = true;
         froilanda.fertilize(tomatoPlant);
@@ -51,10 +54,10 @@ public class CropRowTests {
         Crop potatoRoot2 = new Crop(true);
         Crop potatoRoot3 = new Crop(true);
         CropDuster cropDuster = new CropDuster();
-        CropRow potatoCropRow = new CropRow(false, false);
+        CropRow<Crop> potatoCropRow = new CropRow<>(false, false);
 
         //Overload this method when time comes
-        potatoCropRow.add(potatoRoot1, potatoRoot2, potatoRoot3);
+        potatoCropRow.addCrop(potatoRoot1, potatoRoot2, potatoRoot3);
         froilanda.mount(cropDuster);
         froilanda.fly(cropDuster);
 
@@ -66,7 +69,7 @@ public class CropRowTests {
     @Test
     public void getHasBeenHarvestedTest1() {
         Farmer froilan = new Farmer("froilan");
-        CropRow tomoatoCropRow = newCropRow(true, false);
+        CropRow<Crop> tomoatoCropRow = new CropRow<>(true, false);
         Tractor froilansTractor = new Tractor();
 
         froilan.mount(froilansTractor);
@@ -81,7 +84,7 @@ public class CropRowTests {
     @Test
     public void getHasBeenHarvestedTest2() {
         Farmer froilan = new Farmer("froilan");
-        CropRow cornCropRow = newCropRow(true, false);
+        CropRow<Crop> cornCropRow = new CropRow<>(true, false);
         Tractor froilansTractor = new Tractor();
 
         froilan.mount(froilansTractor);
@@ -95,7 +98,7 @@ public class CropRowTests {
     @Test
     public void getHasBeenHarvested3() {
         Farmer froilan = new Farmer("froilan");
-        CropRow potatoCropRow = new CropRow(true, false);
+        CropRow<Crop> potatoCropRow = new CropRow<>(true, false);
         Tractor trac = new Tractor();
 
         froilan.mount(trac);
@@ -105,29 +108,4 @@ public class CropRowTests {
 
         Assert.assertFalse(hasBeenHarvested);
     }
-
-    @Test
-    public void cropRowInstanceOfCropTest() {
-        (Crop) cropRow = (Crop) (Object) new CropRow();
-        Assert.assertTrue(cropRow instanceof Crop);
-    }
-
-    @Test
-    public void tomatoCropRowInstanceOfCropTest() {
-        (Crop) tomatoCropRow = (Crop) (Object) new CropRow();
-        Assert.assertTrue(tomatoCropRow instanceof Crop);
-    }
-
-    @Test
-    public void cornCropRowInstanceOfCropTest() {
-        (Crop) cornCropRow = (Produce) (Object) new CropRow();
-        Assert.assertTrue(cornCropRow instanceof Crop);
-    }
-
-    @Test
-    public void potatoCropRowInstanceOfCropTest() {
-        (Crop) potatoCropRow = (Crop) (Object) new CropRow();
-        Assert.assertTrue(potatoCropRow instanceof Crop);
-    }
-
 }

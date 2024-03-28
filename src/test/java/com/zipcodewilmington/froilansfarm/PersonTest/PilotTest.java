@@ -1,5 +1,9 @@
 package com.zipcodewilmington.froilansfarm.PersonTest;
 
+import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
+import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.Persons.Person;
+import com.zipcodewilmington.froilansfarm.Persons.Pilot;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,7 +22,7 @@ public class PilotTest {
     }
 
     @Test
-    public void TestPilotInterface(){
+    public void TestPilotInterface1(){
         Person pilot =(Person)(Object) new Pilot("Farmer1");
         Assert.assertTrue(pilot instanceof Eater);
     }
