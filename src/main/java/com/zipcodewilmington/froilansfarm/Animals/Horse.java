@@ -11,14 +11,11 @@ public class Horse extends Animal implements Rideable {
     private boolean isDismounted;
 
 
-
 //    Constructor
     public Horse() {}
 
 
-
 //    Methods
-
     @Override
     public String makeNoise() {
         return "Neigh!";
@@ -34,6 +31,5 @@ public class Horse extends Animal implements Rideable {
     }
 
     @Override
-    public void eat(Produce food, int amount) {
-    }
+    public void eat(Produce food, int amount) {}
 }

@@ -7,6 +7,4 @@ import com.zipcodewilmington.froilansfarm.Produce;
 
 public abstract class Animal implements Eater, NoiseMaker {
     boolean hasEaten;
-
-
 }
