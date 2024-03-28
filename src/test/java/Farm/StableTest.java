@@ -20,7 +20,7 @@ public class StableTest {
         stable.addHorse(horse2);
 
 
-        Assert.assertEquals(1, stable.size()); //Stable should have 1 horse after addition
+        Assert.assertEquals(2, stable.size()); //Stable should have 2 horse after addition
     }
 
     @Test
