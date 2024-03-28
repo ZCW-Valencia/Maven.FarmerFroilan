@@ -9,25 +9,25 @@ public class ChickenTests {
 
     @Test
     public void chickenInheritanceTest1() {
-        Animal chicken = (Animal)(Object)new Chicken();
+        Chicken chicken = new Chicken();
         Assert.assertTrue(chicken instanceof Animal);
     }
 
     @Test
     public void chickenImplementsTest2() {
-        NoiseMaker chicken = (NoiseMaker)(Object)new Chicken();
+        Chicken chicken = new Chicken();
         Assert.assertTrue(chicken instanceof NoiseMaker);
     }
 
     @Test
     public void chickenImplementsTest3() {
-        Eater chicken = (Eater)(Object)new Chicken();
+        Chicken chicken = new Chicken();
         Assert.assertTrue(chicken instanceof Eater);
     }
 
     @Test
     public void chickenImplementsTest4() {
-        Produce chicken = (Produce)(Object)new Chicken();
+        Chicken chicken = new Chicken();
         Assert.assertTrue(chicken instanceof Produce);
     }
 
