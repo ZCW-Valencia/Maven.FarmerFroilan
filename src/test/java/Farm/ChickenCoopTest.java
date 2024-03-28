@@ -1,8 +1,8 @@
-package com.zipcodewilmington.froilansfarm;
+package Farm;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
+
 
 public class ChickenCoopTest {
     private ChickenCoop chickenCoop;

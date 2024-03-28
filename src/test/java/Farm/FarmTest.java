@@ -1,8 +1,8 @@
-package com.zipcodewilmington.froilansfarm;
+package Farm;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
+
 
 public class FarmTest {
     private Farm farm;
@@ -69,9 +69,9 @@ public class FarmTest {
     @Test
     public void testAddChickenCoop() { //Add ChickenCoop Farm Test
         Farm farm = new Farm();
-        ChickenCoop chickencoop1 = new Chickenoop();
-        ChickenCoop chickencoop2 = new Chickenoop();
-        ChickenCoop chickencoop3 = new Chickenoop();
+        ChickenCoop chickencoop1 = new ChickenCoop();
+        ChickenCoop chickencoop2 = new ChickenCoop();
+        ChickenCoop chickencoop3 = new ChickenCoop();
 
         farm.addChickenCoop(chickencoop1); //Adding new stable to Farm
         farm.addChickenCoop(chickencoop2); //Adding new stable to Farm
@@ -83,8 +83,8 @@ public class FarmTest {
     @Test
     public void testRemoveChickenCoop() { //Remove ChickenCoop Farm Test
         Farm farm = new Farm();
-        ChickenCoop chickencoop1 = new Chickenoop();
-        ChickenCoop chickencoop2 = new Chickenoop();
+        ChickenCoop chickencoop1 = new ChickenCoop();
+        ChickenCoop chickencoop2 = new ChickenCoop();
 
         farm.addChickenCoop(chickencoop1);
         farm.addChickenCoop(chickencoop2);
@@ -96,8 +96,8 @@ public class FarmTest {
     @Test
     public void testGetChickenCoop() { //Get ChickenCoop Farm Test
         Farm farm = new Farm();
-        ChickenCoop chickencoop1 = new Chickenoop();
-        ChickenCoop chickencoop2 = new Chickenoop();
+        ChickenCoop chickencoop1 = new ChickenCoop();
+        ChickenCoop chickencoop2 = new ChickenCoop();
 
         farm.addChickenCoop(chickencoop1);
         farm.addChickenCoop(chickencoop2);
