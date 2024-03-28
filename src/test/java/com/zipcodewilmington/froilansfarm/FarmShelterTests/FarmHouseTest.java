@@ -6,70 +6,61 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class FarmHouseTest {
-    private FarmHouse farmHouse;
-
+    private FarmHouse<Person> FarmHouse;
     @Before
     public void setUp() {
-        farmhouse = new FarmHouse();
+        FarmHouse = new FarmHouse<>();
     }
 
     @Test
     public void testAddPerson() { //Add Person FarmHouse Test
-        Person person1 = new Person("Froilan");
+        Person person = new Person();
 
-        farmHouse.add(person1); //Adding new person to FarmHouse
+        FarmHouse.add(person); //Adding new person to FarmHouse
 
-        Assert.assertEquals(1, farmHouse.size()); // Farmhouse should have 1 person after addition
-        Assert.assertTrue(farmHouse.contains(person1)); // FarmHouse should contain Froilan after addition
+        Assert.assertEquals(1, FarmHouse.size()); // Farmhouse should have 1 person after addition
+        Assert.assertTrue(FarmHouse.contains(person)); // FarmHouse should contain person after addition
     }
 
     @Test
     public void testRemovePerson() { //Remove Person FarmHouse Test
-        Person person2 = new Person("Froilanda");
+        Person person = new Person();
 
-        farmHouse.add(person2);
-        farmHouse.remove(person2); //Removing Froilanda from FarmHouse
+        FarmHouse.add(person);
+        FarmHouse.remove(person); //Removing person from FarmHouse
 
-        Assert.assertFalse(farmHouse.contains(person2)); //FarmHouse should not contain Froilanda after removal
+        Assert.assertFalse(FarmHouse.contains(person)); //FarmHouse should not contain person after removal
     }
 
     @Test
     public void testGetPerson() { //Get Person FarmHouse Test
-        Person person1 = new Person("Froilan");
-        Person person2 = new Person("Froilanda");
+        Person person1 = new Person();
+        Person person2 = new Person();
 
-        farmHouse.add(person1);
-        farmHouse.add(person2);
+        FarmHouse.add(person1);
+        FarmHouse.add(person2);
 
-        Assert.assertEquals(person1, farmHouse.get(0)); //Should retrieve/get Froilan by index 0
-        Assert.assertEquals(person2, farmHouse.get(1)); //Should retrieve/get Froilanda by index 1
+        Assert.assertEquals(person1, FarmHouse.get(0)); //Should retrieve/get person1 by index 0
+        Assert.assertEquals(person2, FarmHouse.get(1)); //Should retrieve/get person2 by index 1
     }
 
     @Test
     public void testFarmHouseSize() { //FarmHouse Size Test
-        Person person1 = new Person("Froilan");
-        Person person2 = new Person("Froilanda");
+        Person person1 = new Person();
+        Person person2 = new Person();
 
-        farmHouse.add(person1);
-        farmHouse.add(person2);
+        FarmHouse.add(person1);
+        FarmHouse.add(person2);
 
-        Assert.assertEquals(2, farmHouse.size()); //Farmhouse should have 2 people after addition
+        Assert.assertEquals(2, FarmHouse.size()); //Farmhouse should have 2 people after addition
     }
 
     @Test
     public void testFarmHouseContains() { //FarmHouse Contains Test
-        Person person1 = new Person("Froilan");
-        Person person2 = new Person("Froilanda");
+        Person person = new Person();
 
-        farmHouse.add(person1);
-        farmHouse.add(person2);
+        FarmHouse.add(person);
 
-        Assert.assertTrue(farmHouse.contains(person1, person2)); //Farmhouse should contain Froilan and Froilanda
-    }
-
-    @Test
-    public void testFarmHouseExtendsPerson() { // FarmHouse Extends Person Test
-
-
+        Assert.assertTrue(FarmHouse.contains(person)); //Farmhouse should contain person
     }
 }

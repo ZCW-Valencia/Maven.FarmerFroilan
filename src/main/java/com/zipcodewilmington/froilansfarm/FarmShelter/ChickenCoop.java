@@ -26,5 +26,4 @@ public class ChickenCoop <T extends Chicken> {
     public boolean contains(T chicken){
         return list.contains(chicken);
     }
-
 }

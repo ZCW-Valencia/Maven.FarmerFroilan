@@ -6,7 +6,23 @@ import java.util.ArrayList;
 public class Stable <T extends Horse>{
     public ArrayList<T> list = new ArrayList<>();
 
-    public void add(T horse) {
-        list.add(horse);
+    public void add(T Horse) {
+        list.add(Horse);
+    }
+
+    public boolean remove(T Horse){
+        return list.remove(Horse);
+    }
+
+    public T get(int index){
+        return list.get(index);
+    }
+
+    public int size(){
+        return list.size();
+    }
+
+    public boolean contains(T Horse){
+        return list.contains(Horse);
     }
 }
