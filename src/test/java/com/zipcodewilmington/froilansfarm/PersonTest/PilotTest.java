@@ -7,7 +7,7 @@ public class PilotTest {
 
     @Test
     public void TestInheritance(){
-        Pilot pilot = new Pilot("pilot");
+        Person pilot =(Person)(Object) new Pilot("pilot");
         Assert.assertTrue(pilot instanceof Person);
     }
 

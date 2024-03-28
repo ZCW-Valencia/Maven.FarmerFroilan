@@ -7,7 +7,7 @@ public class FarmerTest {
 
     @Test
     public void inheritancePerson(){
-        Farmer farmer = new Farmer("Farmer1");
+        Person farmer =(Person)(Object) new Farmer("Farmer1");
         Assert.assertTrue(farmer instanceof Person);
     }
 
