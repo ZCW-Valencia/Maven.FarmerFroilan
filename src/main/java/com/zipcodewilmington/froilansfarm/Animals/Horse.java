@@ -23,20 +23,6 @@ public class Horse extends Animal implements Rideable {
     }
 
 
-//    Getters
-    public boolean isMounted() {
-        return isMounted;
-    }
-
-    public boolean isBeingRidden() {
-        return isBeingRidden;
-    }
-
-    public boolean isDismounted() {
-        return isDismounted;
-    }
-
-
 //    Methods
     @Override
     public String makeNoise() {
@@ -55,6 +41,33 @@ public class Horse extends Animal implements Rideable {
         } else {
             hasEaten = false;
         }
+    }
+
+    @Override
+    public void getIsMounted(boolean isMounted) {
+        this.isMounted = isMounted;
+    }
+
+    @Override
+    public void getIsBeingRidden(boolean isBeingRidden) {
+        this.isBeingRidden = isBeingRidden;
+    }
+
+    @Override
+    public void getIsDismounted(boolean isDismounted) {
+        this.isDismounted = isDismounted;
+    }
+
+    public boolean isMounted() {
+        return isMounted;
+    }
+
+    public boolean isBeingRidden() {
+        return isBeingRidden;
+    }
+
+    public boolean isDismounted() {
+        return isDismounted;
     }
 
     public boolean exercise() {

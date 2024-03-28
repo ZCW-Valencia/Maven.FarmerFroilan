@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm.AnimalTests;
 
 import com.zipcodewilmington.froilansfarm.Animals.Animal;
 import com.zipcodewilmington.froilansfarm.Animals.Chicken;
+import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Produce;
@@ -11,6 +12,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 public class ChickenTests {
+    boolean hasEaten;
 
     @Test
     public void chickenInheritanceTest1() {
@@ -45,22 +47,38 @@ public class ChickenTests {
     }
 
     @Test
+    public void eatTest1() {
+        Chicken chicken = new Chicken();
+        Crop corn = new Crop();
+
+        chicken.eat(corn, 1);
+
+        Assert.assertTrue(hasEaten);
+    }
+
+    @Test
+    public void eatTest2() {
+        Chicken chicken = new Chicken();
+        Crop corn = new Crop();
+
+        chicken.eat(corn, 0);
+
+        Assert.assertFalse(hasEaten);
+    }
+
+    @Test
     public void yieldTest1() {
         Chicken chicken = new Chicken();
         boolean hasBeenFertilized = true;
 
-        Object egg = chicken.yield();
-
-        assertNotNull(egg);
+        int ex
+        int actualYield = chicken.yield();
+        Assert.assertEquals(expectedYield, actualYield);
     }
 
     @Test
     public void yieldTest2() {
         Chicken chicken = new Chicken();
-        boolean hasBeenFertilized = false;
-
-        Object egg = chicken.yield();
-
-        assertNull(egg);
+        boolean hasBeenFertilized = true;
     }
 }

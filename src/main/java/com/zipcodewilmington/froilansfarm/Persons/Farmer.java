@@ -32,7 +32,7 @@ public class Farmer extends Person implements Rider, Botanist {
     }
     @Override
     public boolean mount(Rideable ride) {
-        ride.;
+        return false;
     }
 
     @Override

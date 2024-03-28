@@ -1,10 +1,12 @@
 package com.zipcodewilmington.froilansfarm.Animals;
 
+import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.Produce;
 
 public class Chicken extends Animal implements Produce {
 //    Instance Variables
     private boolean hasBeenFertilized = false;
+    Crop corn = new Crop();
 
 
 //    Constructor
@@ -25,6 +27,8 @@ public class Chicken extends Animal implements Produce {
     public void eat(Produce food, int amount) {
         if (food == corn && amount == 1) {
             hasEaten = true;
+        } else {
+            hasEaten = false;
         }
     }
 
@@ -35,10 +39,12 @@ public class Chicken extends Animal implements Produce {
 
     @Override
     public int yield() {
-        return 0;
-    }
-
-    public boolean getHasBeenFertilized() {
-        return hasBeenFertilized;
+        int edibleEgg = 0;
+        if (hasBeenFertilized) {
+            edibleEgg = 1;
+        } else {
+            return edibleEgg;
+        }
+        return edibleEgg;
     }
 }
