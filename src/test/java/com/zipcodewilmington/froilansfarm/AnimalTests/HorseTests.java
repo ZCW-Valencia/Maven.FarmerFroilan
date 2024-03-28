@@ -1,4 +1,4 @@
-package AnimalTests;
+package com.zipcodewilmington.froilansfarm.AnimalTests;
 
 import org.junit.Assert;
 import org.junit.Test;
