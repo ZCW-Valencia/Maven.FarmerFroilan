@@ -1,7 +1,9 @@
 package com.zipcodewilmington.froilansfarm.Persons;
 
+import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 import com.zipcodewilmington.froilansfarm.Produce;
+import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 
 public class Pilot extends Person implements Rider {
     private Boolean isFlying = true;
@@ -26,30 +28,30 @@ public class Pilot extends Person implements Rider {
         return false;
     }
 
-    @Override
-    public void makesNoise() {
 
-    }
 
-    @Override
-    public boolean mount(T ride) {
-        return false;
-    }
-
-    @Override
-    public boolean ride(T ride) {
-        return false;
-    }
-
-    @Override
-    public boolean disMount(T ride) {
-        return false;
-    }
     public void fly(Boolean isFlying){
 
     }
 
 
+    @Override
+    public String makeNoise() {
+        return "";
+    }
 
+    @Override
+    public boolean mount(Rideable ride) {
+        return true;
+    }
 
+    @Override
+    public boolean ride(Rideable ride) {
+        return true;
+    }
+
+    @Override
+    public boolean disMount(Rideable ride) {
+        return true;
+    }
 }
