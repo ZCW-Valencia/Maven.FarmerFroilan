@@ -32,16 +32,19 @@ public class Farmer extends Person implements Rider, Botanist {
     }
     @Override
     public boolean mount(Rideable ride) {
-        return false;
+        ride.setIsMounted(ride);
+        return ride.getIsMounted();
     }
 
     @Override
     public boolean ride(Rideable ride) {
-        return false;
+        ride.setIsBeingRidden(ride);
+        return ride.getIsBeingRidden();
     }
 
     @Override
-    public boolean disMount(Rideable ride) {
-        return false;
+    public boolean dismount(Rideable ride) {
+        ride.setIsDismounted(ride);
+        return ride.getIsDismounted();
     }
 }
