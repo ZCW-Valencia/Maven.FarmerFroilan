@@ -1,7 +1,7 @@
-# Ol' McFroilan Had a Farm
+# Ol' McFroilan Had a FarmShelterTests
 As a team, fork this repository to an Organization and submit the URL of your fork via the Student Portal. Each teammate will submit the **SAME URL.** 
 
-* **Objective:** To implement a system representative of a Farm environment
+* **Objective:** To implement a system representative of a FarmShelterTests environment
 * **Purpose:** To demonstrate [multi-inheritence design issues](https://www.geeksforgeeks.org/java-and-multiple-inheritance/)
 * **Prerequesites:** A `UML` approved by an instructor.
 
@@ -20,7 +20,7 @@ As a team, fork this repository to an Organization and submit the URL of your fo
 	* `CropRow` can store many `Crop`.
 	* `Field` can store many `CropRow`
 	* `Vehicle` are `NoiseMaker` and `Rideable`
-		* `FarmVehicle` can `operate` on a `Farm`
+		* `FarmVehicle` can `operate` on a `FarmShelterTests`
 			* `Tractor` is a `FarmVehicle` which can `harvest` a `Crop`.
 
 		* `Aircraft` are `Vehicle` which can  `fly`
@@ -37,11 +37,11 @@ As a team, fork this repository to an Organization and submit the URL of your fo
 	* `Stable` stores many `Horse`.
 	* `FarmHouse` stores many `Person`
 	* `ChickenCoop` stores many `Chicken`
-	* `Farm` stores many `Stable`, many `ChickenCoop`, and a single `FarmHouse`
+	* `FarmShelterTests` stores many `Stable`, many `ChickenCoop`, and a single `FarmHouse`
 
 # Establishing The Plot
 
-* `Froilan`, a `Farmer` has a `Farm` consisting of
+* `Froilan`, a `Farmer` has a `FarmShelterTests` consisting of
 	* 1 `Field` of 5 `CropRow`.
 		* Row 1 has `Corn`
 		* Row 2 has `Tomato`

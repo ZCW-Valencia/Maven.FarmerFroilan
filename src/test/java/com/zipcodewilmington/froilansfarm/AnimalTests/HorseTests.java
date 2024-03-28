@@ -7,25 +7,25 @@ public class HorseTests {
 
     @Test
     public void horseInheritanceTest1() {
-        Animal horse = (Animal)(Object)new Horse();
+        Horse horse = new Horse();
         Assert.assertTrue(horse instanceof Animal);
     }
 
     @Test
     public void horseInheritanceTest2() {
-        Rideable horse = (Rideable)(Object)new Horse();
+        Horse horse = new Horse();
         Assert.assertTrue(horse instanceof Rideable);
     }
 
     @Test
     public void horseImplementationTest1() {
-        NoiseMaker horse = (NoiseMaker)(Object)new Horse();
+        Horse horse = new Horse();
         Assert.assertTrue(horse instanceof NoiseMaker);
     }
 
     @Test
     public void horseImplementationTest2() {
-        Eater horse = (Eater)(Object)new Horse();
+        Horse horse = new Horse();
         Assert.assertTrue(horse instanceof Eater);
     }
 
