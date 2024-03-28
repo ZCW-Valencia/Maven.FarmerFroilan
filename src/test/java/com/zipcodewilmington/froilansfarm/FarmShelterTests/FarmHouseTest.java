@@ -5,13 +5,14 @@ import org.junit.Test;
 
 public class FarmHouseTest {
     private FarmHouse farmHouse;
+
     @Before
-    public void setUp(){
-         farmhouse = new FarmHouse();
+    public void setUp() {
+        farmhouse = new FarmHouse();
     }
 
     @Test
-    public void testAddPerson(){ //Add Person FarmHouse Test
+    public void testAddPerson() { //Add Person FarmHouse Test
         Person person1 = new Person("Froilan");
 
         farmHouse.add(person1); //Adding new person to FarmHouse
@@ -21,7 +22,7 @@ public class FarmHouseTest {
     }
 
     @Test
-    public void testRemovePerson(){ //Remove Person FarmHouse Test
+    public void testRemovePerson() { //Remove Person FarmHouse Test
         Person person2 = new Person("Froilanda");
 
         farmHouse.add(person2);
@@ -31,7 +32,7 @@ public class FarmHouseTest {
     }
 
     @Test
-    public void testGetPerson(){ //Get Person FarmHouse Test
+    public void testGetPerson() { //Get Person FarmHouse Test
         Person person1 = new Person("Froilan");
         Person person2 = new Person("Froilanda");
 
@@ -43,7 +44,7 @@ public class FarmHouseTest {
     }
 
     @Test
-    public void testFarmHouseSize(){ //FarmHouse Size Test
+    public void testFarmHouseSize() { //FarmHouse Size Test
         Person person1 = new Person("Froilan");
         Person person2 = new Person("Froilanda");
 
@@ -54,7 +55,7 @@ public class FarmHouseTest {
     }
 
     @Test
-    public void testFarmHouseContains(){ //FarmHouse Contains Test
+    public void testFarmHouseContains() { //FarmHouse Contains Test
         Person person1 = new Person("Froilan");
         Person person2 = new Person("Froilanda");
 
@@ -62,5 +63,11 @@ public class FarmHouseTest {
         farmHouse.add(person2);
 
         Assert.assertTrue(farmHouse.contains(person1, person2)); //Farmhouse should contain Froilan and Froilanda
+    }
+
+    @Test
+    public void testFarmHouseExtendsPerson() { // FarmHouse Extends Person Test
+
+
     }
 }

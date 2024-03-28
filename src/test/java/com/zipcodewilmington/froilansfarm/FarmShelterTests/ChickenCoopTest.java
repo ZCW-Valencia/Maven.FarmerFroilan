@@ -69,6 +69,11 @@ public class ChickenCoopTest {
 
         Assert.assertTrue(chickenCoop.contains(chicken1, chicken2)); // ChickenCoop should contain chicken1 and chicken2
     }
+
+    @Test
+    public void testChickenCoopExtendsChicken(){ // ChickenCoop Extends Chicken Test
+
+    }
 }
 
 
