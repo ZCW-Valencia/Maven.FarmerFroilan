@@ -3,7 +3,7 @@ package com.zipcodewilmington.froilansfarm.Vehicle;
 import org.junit.Test;
 import sun.jvm.hotspot.utilities.Assert;
 
-public class CropDuster {
+public class CropDusterTest {
 
     //CropDuster Inheritance test
     @Test
