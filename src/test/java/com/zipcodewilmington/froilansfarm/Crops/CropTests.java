@@ -79,4 +79,44 @@ public class CropTests {
         Assert.assertFalse(hasBeenFertilized);
     }
 
+    @Test
+    public void cropInstanceOfProduceTest() {
+        (Produce) crop = (Produce) (Object) new Crop();
+        Assert.assertTrue(crop instanceof Produce);
+    }
+
+    @Test
+    public void tomatoPlantInstanceOfProduceTest() {
+        (Produce) tomatoPlant = (Produce) (Object) new Crop();
+        Assert.assertTrue(tomatoPlant instanceof Produce);
+    }
+
+    @Test
+    public void cornStalkInstanceOfProduceTest() {
+        (Produce) cornStalk = (Produce) (Object) new Crop();
+        Assert.assertTrue(cornStalk instanceof Produce);
+    }
+
+    @Test
+    public void potatoRootInstanceOfProduceTest() {
+        (Produce) potatoRoot = (Produce) (Object) new Crop();
+        Assert.assertTrue(potatoRoot instanceof Produce);
+    }
+
+    public void tomatoPlantInstanceOfCropTest() {
+        (Crop) tomatoPlant = (Crop) (Object) new TomoatoPlant();
+        Assert.assertTrue(tomatoPlant instanceof Crop);
+    }
+
+    @Test
+    public void cornStalkInstanceOfCropTest() {
+        (Crop) cornStalk = (Crop) (Object) new cornStalk();
+        Assert.assertTrue(cornStalk instanceof Crop);
+    }
+
+    @Test
+    public void potatoRootInstanceOfCropTest() {
+        (Crop) potatoRoot = (Crop) (Object) new potatoRoot();
+        Assert.assertTrue(potatoRoot instanceof Crop);
+    }
 }
