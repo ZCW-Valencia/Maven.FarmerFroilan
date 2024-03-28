@@ -1,4 +1,4 @@
-package com.zipcodewilmington.froilansfarm;
+package com.zipcodewilmington.froilansfarm.FarmShelterTests;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
