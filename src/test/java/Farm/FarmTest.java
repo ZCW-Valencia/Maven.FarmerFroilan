@@ -7,7 +7,7 @@ import org.junit.Test;
 public class FarmTest {
     private Farm farm;
     @Before
-    public void setUp() {
+    public void setUp(){
         farm = new Farm();
     }
 

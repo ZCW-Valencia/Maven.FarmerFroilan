@@ -10,7 +10,7 @@ public class FarmHouseTest {
     private FarmHouse farmHouse;
     @Before
     public void setUp(){
-         farmhouse = new FarmHouse();
+         farmHouse = new FarmHouse();
     }
 
     @Test
