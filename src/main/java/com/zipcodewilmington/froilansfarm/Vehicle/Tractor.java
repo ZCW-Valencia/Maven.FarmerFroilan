@@ -20,24 +20,12 @@ public class Tractor<T> extends FarmVehicle{
         return isMounted;
     }
 
-    public void setMounted(boolean mounted) {
-        isMounted = mounted;
-    }
-
     public boolean isBeingRidden() {
         return isBeingRidden;
     }
 
-    public void setBeingRidden(boolean beingRidden) {
-        isBeingRidden = beingRidden;
-    }
-
     public boolean isDismounted() {
         return isDismounted;
-    }
-
-    public void setDismounted(boolean dismounted) {
-        isDismounted = dismounted;
     }
 
     //if isBeingRidden and hasBeenFertilized is both true, return true else false
