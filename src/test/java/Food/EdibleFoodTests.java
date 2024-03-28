@@ -19,7 +19,7 @@ public class EdibleFoodTests {
 
         Assert.assertEquals(expectedTomatoCropYield, actualTomatoCropRowYield);
     }
- 
+  
     @Test
     public void tomatoYieldTest2() {
         Crop tomato1 = new Crop(true);
