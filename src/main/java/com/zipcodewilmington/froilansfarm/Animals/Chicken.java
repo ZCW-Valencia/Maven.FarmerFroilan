@@ -1,20 +1,39 @@
 package com.zipcodewilmington.froilansfarm.Animals;
 
-public class Chicken extends Animal implements Produce {
-    /*
-    Need the following instance variables:
-    bool hasBeenFertilized
+import com.zipcodewilmington.froilansfarm.Produce;
 
-    Needs the following methods:
-    makeNoise()
-    eat()
-    yield()
-     */
+public class Chicken extends Animal implements Produce {
+//    Instance Variables
     private boolean hasBeenFertilized;
 
-    public Chicken() {
-        hasBeenFertilized = false;
+
+
+//    Constructor
+    public Chicken() {}
+
+    public Chicken(boolean hasBeenFertilized) {
+        this.hasBeenFertilized = hasBeenFertilized;
     }
 
 
+
+//    Methods
+    public boolean getHasBeenFertilized() {
+        return hasBeenFertilized;
+    }
+
+    public String makeNoise() {
+        return "Cluck!";
+    }
+
+    @Override
+    public boolean eat(T food, int amount) {
+        if ()
+        return
+    }
+}
+
+    @Override
+    public int yield() {
+        if (hasBeenFertilized) {}
 }

@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.AnimalTests;
 
+import com.zipcodewilmington.froilansfarm.Animals.Animal;
+import com.zipcodewilmington.froilansfarm.Animals.Horse;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -43,7 +45,7 @@ public class HorseTests {
         Corn corn = new Corn();
         boolean hasEaten = true;
 
-        boolean result = horse.eat(corn, 3);
+        boolean result = horse.eat();
 
         Assert.assertTrue(result);
     }
@@ -54,7 +56,7 @@ public class HorseTests {
         Corn corn = new Corn();
         boolean hasEaten = false;
 
-        boolean result = horse.eat(corn, 3);
+        boolean result = horse.eat();
 
         Assert.assertFalse(result);
     }
@@ -64,7 +66,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isMounted = true;
 
-        boolean result = horse.getIsMounted(isMounted);
+        boolean result = horse.getIsMounted();
 
         Assert.assertTrue(result);
     }
@@ -74,7 +76,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isMounted = false;
 
-        boolean result = horse.getIsMounted(isMounted);
+        boolean result = horse.getIsMounted();
 
         Assert.assertFalse(result);
     }
@@ -84,7 +86,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isBeingRidden = true;
 
-        boolean result = horse.getIsBeingRidden(isBeingRidden);
+        boolean result = horse.getIsBeingRidden();
 
         Assert.assertTrue(result);
     }
@@ -94,7 +96,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isBeingRidden = false;
 
-        boolean result = horse.getIsBeingRidden(isBeingRidden);
+        boolean result = horse.getIsBeingRidden();
 
         Assert.assertFalse(result);
     }
@@ -104,7 +106,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isDismounted = true;
 
-        boolean result = horse.getIsDismounted(isDismounted);
+        boolean result = horse.getIsDismounted();
 
         Assert.assertTrue(result);
     }
@@ -114,7 +116,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isDismounted = false;
 
-        boolean result = horse.getIsDismounted(isDismounted);
+        boolean result = horse.getIsDismounted();
 
         Assert.assertFalse(result);
     }
@@ -122,9 +124,8 @@ public class HorseTests {
     @Test
     public void exerciseTest1() {
         Horse horse = new Horse();
-        Farmer farmer = new Farmer();
+        boolean isBeingRidden = true;
 
-        farmer.mount(horse);
         boolean result = horse.exercise();
 
         Assert.assertTrue(result);
@@ -133,10 +134,8 @@ public class HorseTests {
     @Test
     public void exerciseTest2() {
         Horse horse = new Horse();
-        Farmer farmer = new Farmer();
+        boolean isBeingRidden = false;
 
-        farmer.mount(horse);
-        farmer.disMount(horse);
         boolean result = horse.exercise();
 
         Assert.assertFalse(result);

@@ -9,9 +9,9 @@ public abstract class Animal implements Rideable, Eater, NoiseMaker {
     makeNoise()
     eat()
      */
-    Boolean hasEaten;
+    boolean hasEaten;
 
-    abstract void makeNoise();
+    abstract String makeNoise();
 
-    abstract void eat();
+    abstract boolean eat(T food, int amount);
 }
