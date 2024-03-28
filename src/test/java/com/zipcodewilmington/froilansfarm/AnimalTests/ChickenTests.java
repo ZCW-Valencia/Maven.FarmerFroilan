@@ -7,29 +7,27 @@ import static org.junit.Assert.assertNull;
 
 public class ChickenTests {
 
-    // If Animal extends Rideable, does Chicken inherit those methods?
-
     @Test
     public void chickenInheritanceTest1() {
-        Animal chicken = (Animal)(Object)new chicken();
+        Animal chicken = (Animal)(Object)new Chicken();
         Assert.assertTrue(chicken instanceof Animal);
     }
 
     @Test
     public void chickenImplementsTest2() {
-        NoiseMaker chicken = (NoiseMaker)(Object)new chicken();
+        NoiseMaker chicken = (NoiseMaker)(Object)new Chicken();
         Assert.assertTrue(chicken instanceof NoiseMaker);
     }
 
     @Test
     public void chickenImplementsTest3() {
-        Eater chicken = (Eater)(Object)new chicken();
+        Eater chicken = (Eater)(Object)new Chicken();
         Assert.assertTrue(chicken instanceof Eater);
     }
 
     @Test
     public void chickenImplementsTest4() {
-        Produce chicken = (Produce)(Object)new chicken();
+        Produce chicken = (Produce)(Object)new Chicken();
         Assert.assertTrue(chicken instanceof Produce);
     }
 
@@ -39,21 +37,6 @@ public class ChickenTests {
         String expectedNoise = "Cluck!";
         String actualNoise = chicken.makeNoise();
         Assert.assertEquals(expectedNoise, actualNoise);
-    }
-
-    @Test
-    public void eatTest() { // This test is intertwined with the hasEaten test
-        Chicken chicken = new Chicken();
-    }
-
-    @Test
-    public void hasEatenTest() { // Need more information. What do chickens eat and how much?
-        Chicken chicken = new Chicken();
-
-        chicken.eat();
-        boolean result = chicken.hasEaten();
-
-        Assert.assertTrue(result);
     }
 
     @Test
