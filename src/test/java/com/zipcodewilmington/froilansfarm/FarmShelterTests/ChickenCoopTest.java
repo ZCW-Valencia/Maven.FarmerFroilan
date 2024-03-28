@@ -6,29 +6,30 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ChickenCoopTest {
-    private ChickenCoop chickenCoop;
+    private ChickenCoop<Chicken> ChickenCoop;
     @Before
     public void setUp(){
-        chickenCoop = new ChickenCoop();
+        ChickenCoop = new ChickenCoop<>();
     }
 
     @Test
     public void testAddChicken(){ // Add Chicken ChickenCoop Test
         Chicken chicken = new Chicken();
 
-        chickenCoop.add(chicken); // Adding new chicken to ChickenCoop
+        ChickenCoop.add(chicken); // Adding new chicken to ChickenCoop
 
-        Assert.assertEquals(1, chickenCoop.size()); // ChickenCoop should have 1 chicken after addition
+        Assert.assertTrue(ChickenCoop.contains(chicken)); // ChickenCoop should contain chicken after addition
     }
 
     @Test
     public void testRemoveChicken(){ // Remove Chicken ChickenCoop Test
         Chicken chicken = new Chicken();
 
-        chickenCoop.add(chicken); // Adding new chicken to ChickenCoop
-        chickenCoop.remove(chicken); // Removing chicken from ChickenCoop
+        ChickenCoop.add(chicken); // Adding new chicken to ChickenCoop
+        ChickenCoop.remove(chicken); // Removing chicken from ChickenCoop
 
-        Assert.assertFalse(chickenCoop.contains(chicken)); // ChickenCoop should not contain chicken after removal
+        Assert.assertTrue(ChickenCoop.remove(chicken)); // Removed chicken from ChickenCoop
+        Assert.assertFalse(ChickenCoop.contains(chicken)); // ChickenCoop should not contain chicken after removal
     }
 
     @Test
@@ -39,13 +40,13 @@ public class ChickenCoopTest {
         Chicken chicken4 = new Chicken();
 
 
-        chickenCoop.add(chicken1);
-        chickenCoop.add(chicken2);
-        chickenCoop.add(chicken3);
-        chickenCoop.add(chicken4);
+        ChickenCoop.add(chicken1);
+        ChickenCoop.add(chicken2);
+        ChickenCoop.add(chicken3);
+        ChickenCoop.add(chicken4);
 
-        Assert.assertEquals(chicken1, chickenCoop.get(0)); //Should retrieve/get chicken1 by index 0
-        Assert.assertEquals(chicken4, chickenCoop.get(3)); //Should retrieve/get chicken4 by index 3
+        Assert.assertEquals(chicken1, ChickenCoop.get(0)); //Should retrieve/get chicken1 by index 0
+        Assert.assertEquals(chicken4, ChickenCoop.get(3)); //Should retrieve/get chicken4 by index 3
     }
 
     @Test
@@ -54,11 +55,11 @@ public class ChickenCoopTest {
         Chicken chicken2 = new Chicken();
         Chicken chicken3 = new Chicken();
 
-        chickenCoop.add(chicken1);
-        chickenCoop.add(chicken2);
-        chickenCoop.add(chicken3);
+        ChickenCoop.add(chicken1);
+        ChickenCoop.add(chicken2);
+        ChickenCoop.add(chicken3);
 
-        Assert.assertEquals(3, chickenCoop.size()); // ChickenCoop should have 3 chickens after addition
+        Assert.assertEquals(3, ChickenCoop.size()); // ChickenCoop should have 3 chickens after addition
     }
 
     @Test
@@ -66,10 +67,10 @@ public class ChickenCoopTest {
         Chicken chicken1 = new Chicken();
         Chicken chicken2 = new Chicken();
 
-        chickenCoop.add(chicken1);
-        chickenCoop.add(chicken2);
+        ChickenCoop.add(chicken1);
 
-        Assert.assertTrue(chickenCoop.contains(chicken1, chicken2)); // ChickenCoop should contain chicken1 and chicken2
+        Assert.assertTrue(ChickenCoop.contains(chicken1)); // ChickenCoop should contain chicken1
+        Assert.assertFalse(ChickenCoop.contains(chicken2)); // ChickenCoop should not contain chicken2
     }
 
     @Test

@@ -1,4 +1,5 @@
 package com.zipcodewilmington.froilansfarm.FarmShelter;
+import com.zipcodewilmington.froilansfarm.Animals.Chicken;
 import com.zipcodewilmington.froilansfarm.Persons.Person;
 
 import java.util.ArrayList;
@@ -10,3 +11,4 @@ public class FarmHouse <T extends Person> {
         list.add(person);
     }
 }
+
