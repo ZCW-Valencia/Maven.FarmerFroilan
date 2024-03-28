@@ -119,5 +119,6 @@ public class VehicleCropDuster {
         cropDuster.setIsBeingRidden(froilanda.ride());
 
         Assert.assertTrue(cropDuster.harvest(t cropRow, field.getHasBeenPlanted(), this.IsBeingRidden));
+        
     }
 }
