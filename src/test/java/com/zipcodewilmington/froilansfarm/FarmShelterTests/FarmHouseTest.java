@@ -1,4 +1,5 @@
 package com.zipcodewilmington.froilansfarm.FarmShelterTests;
+import com.zipcodewilmington.froilansfarm.FarmShelter.FarmHouse;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
