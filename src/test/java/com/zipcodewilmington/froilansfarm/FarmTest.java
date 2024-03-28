@@ -10,7 +10,7 @@ public class FarmTest {
     public void setUp() {
         farm = new Farm();
     }
-    
+
     @Test
     public void testFarmInitialization(){
         Farm farm = new Farm();
