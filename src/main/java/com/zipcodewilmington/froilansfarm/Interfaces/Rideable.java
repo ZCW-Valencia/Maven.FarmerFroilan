@@ -2,11 +2,16 @@ package com.zipcodewilmington.froilansfarm.Interfaces;
 
 public interface Rideable<T> {
 
-    public void getIsMounted(boolean isMounted);
+    public boolean getIsMounted();
 
-    public void getIsBeingRidden(boolean isBeingRidden);
+    public boolean getIsBeingRidden();
 
+    public boolean getIsDismounted();
 
-    public void getIsDismounted(boolean isDismounted);
+    public void setIsMounted(T ride);
+
+    public void setIsBeingRidden(T ride);
+
+    public void setIsDismounted(T ride);
 
 }
