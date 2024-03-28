@@ -5,6 +5,10 @@ import com.zipcodewilmington.froilansfarm.FarmShelter.Stable;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+<<<<<<< HEAD
+//import sun.jvm.hotspot.utilities.Assert;
+=======
+>>>>>>> 6fe0979a409e8701edf9c21c9b9cb5b99c3fbf78
 
 public class FarmTest {
     private Farm farm;
