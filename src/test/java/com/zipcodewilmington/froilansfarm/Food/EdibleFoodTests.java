@@ -1,4 +1,4 @@
-package Food;
+package com.zipcodewilmington.froilansfarm.Food;
 import org.junit.Test;
 import org.junit.Assert;
 
