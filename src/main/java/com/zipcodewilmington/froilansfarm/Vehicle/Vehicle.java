@@ -9,4 +9,18 @@ public class Vehicle implements NoiseMaker, Rideable {
     public String makeNoise() {
         return null;
     }
+
+    @Override
+    public void getIsMounted(boolean isMounted) {
+
+    }
+    @Override
+    public void getIsBeingRidden(boolean isBeingRidden) {
+
+    }
+
+    @Override
+    public void getIsDismounted(boolean isDismounted) {
+
+    }
 }

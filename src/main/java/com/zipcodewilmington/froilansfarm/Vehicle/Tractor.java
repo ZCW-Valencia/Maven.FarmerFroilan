@@ -29,8 +29,8 @@ public class Tractor<T> extends FarmVehicle{
     }
 
     //if isBeingRidden and hasBeenFertilized is both true, return true else false
-    public boolean harvest(T cropRow, boolean hasBeenFertilized){
-        if(this.isBeingRidden == true && hasBeenFertilized == true){
+    public boolean harvest(T cropRow){
+        if(this.isBeingRidden == true){
             return true;
         }
         return false;
