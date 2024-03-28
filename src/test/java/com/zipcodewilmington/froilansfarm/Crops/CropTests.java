@@ -1,4 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Crops;
+import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.Produce;
 import org.junit.Test;
 import org.junit.Assert;
 
@@ -20,7 +22,7 @@ public class CropTests {
         Crop cornStalk = new Crop(false);
         froilan.plant(cornStalk);
 
-        Boolean hasBeenPlanted = cornStalk.getHasBeenPlanted;
+        Boolean hasBeenPlanted = cornStalk.getHasBeenPlanted();
 
         Assert.assertTrue(hasBeenPlanted);
     }
@@ -29,7 +31,7 @@ public class CropTests {
     public void getHasBeenPlantedTest3() {
         Crop potatoRoot = new Crop(false);
 
-        Boolean hasBeenPlanted = potatoRoot.getHasBeenPlanted;
+        Boolean hasBeenPlanted = potatoRoot.getHasBeenPlanted();
 
         Assert.assertFalse(hasBeenPlanted);
     }
@@ -77,6 +79,30 @@ public class CropTests {
         Boolean hasBeenFertilized = potatoRoot.getHasBeenFertilized();
 
         Assert.assertFalse(hasBeenFertilized);
+    }
+
+    @Test
+    public void cropInstanceOfProduceTest() {
+        Crop crop = new Crop();
+        Assert.assertTrue(crop instanceof Produce);
+    }
+
+    @Test
+    public void tomatoPlantInstanceOfProduceTest() {
+        Crop tomatoPlant = new Crop();
+        Assert.assertTrue(tomatoPlant instanceof Produce);
+    }
+
+    @Test
+    public void cornStalkInstanceOfProduceTest() {
+        Crop cornStalk = new Crop();
+        Assert.assertTrue(cornStalk instanceof Produce);
+    }
+
+    @Test
+    public void potatoRootInstanceOfProduceTest() {
+        Crop potatoRoot = new Crop();
+        Assert.assertTrue(potatoRoot instanceof Produce);
     }
 
 }
