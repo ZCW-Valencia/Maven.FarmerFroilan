@@ -14,7 +14,6 @@ public class Vehicle implements NoiseMaker, Rideable {
     public void getIsMounted(boolean isMounted) {
 
     }
-
     @Override
     public void getIsBeingRidden(boolean isBeingRidden) {
 
