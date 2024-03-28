@@ -45,7 +45,9 @@ public class HorseTests {
         Corn corn = new Corn();
         boolean hasEaten = true;
 
-        boolean result = horse.eat();
+
+        boolean result = horse.eat(corn, 3);
+
 
         Assert.assertTrue(result);
     }
@@ -56,7 +58,7 @@ public class HorseTests {
         Corn corn = new Corn();
         boolean hasEaten = false;
 
-        boolean result = horse.eat(corn);
+        boolean result = horse.eat(corn, 3);
 
         Assert.assertFalse(result);
     }
@@ -66,7 +68,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isMounted = true;
 
-        boolean result = horse.getIsMounted();
+        boolean result = horse.getIsMounted(isMounted);
 
         Assert.assertTrue(result);
     }
@@ -76,7 +78,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isMounted = false;
 
-        boolean result = horse.getIsMounted();
+        boolean result = horse.getIsMounted(isMounted);
 
         Assert.assertFalse(result);
     }
@@ -86,7 +88,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isBeingRidden = true;
 
-        boolean result = horse.getIsBeingRidden();
+        boolean result = horse.getIsBeingRidden(isBeingRidden);
 
         Assert.assertTrue(result);
     }
@@ -96,7 +98,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isBeingRidden = false;
 
-        boolean result = horse.getIsBeingRidden();
+        boolean result = horse.getIsBeingRidden(isBeingRidden);
 
         Assert.assertFalse(result);
     }
@@ -106,7 +108,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isDismounted = true;
 
-        boolean result = horse.getIsDismounted();
+        boolean result = horse.getIsDismounted(isDismounted);
 
         Assert.assertTrue(result);
     }
@@ -116,7 +118,7 @@ public class HorseTests {
         Horse horse = new Horse();
         boolean isDismounted = false;
 
-        boolean result = horse.getIsDismounted();
+        boolean result = horse.getIsDismounted(isDismounted);
 
         Assert.assertFalse(result);
     }
