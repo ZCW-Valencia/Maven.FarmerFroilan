@@ -2,9 +2,6 @@ package com.zipcodewilmington.froilansfarm.FarmShelterTests;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
-
-//
 
 public class FarmHouseTest {
     private FarmHouse farmHouse;
@@ -17,7 +14,7 @@ public class FarmHouseTest {
     public void testAddPerson(){ //Add Person FarmHouse Test
         Person person1 = new Person("Froilan");
 
-        farmHouse.addPerson(person1); //Adding new person to FarmHouse
+        farmHouse.add(person1); //Adding new person to FarmHouse
 
         Assert.assertEquals(1, farmHouse.size()); // Farmhouse should have 1 person after addition
         Assert.assertTrue(farmHouse.contains(person1)); // FarmHouse should contain Froilan after addition
@@ -27,8 +24,8 @@ public class FarmHouseTest {
     public void testRemovePerson(){ //Remove Person FarmHouse Test
         Person person2 = new Person("Froilanda");
 
-        farmHouse.addPerson(person2);
-        farmHouse.removePerson(person2); //Removing Froilanda from FarmHouse
+        farmHouse.add(person2);
+        farmHouse.remove(person2); //Removing Froilanda from FarmHouse
 
         Assert.assertFalse(farmHouse.contains(person2)); //FarmHouse should not contain Froilanda after removal
     }
@@ -38,8 +35,8 @@ public class FarmHouseTest {
         Person person1 = new Person("Froilan");
         Person person2 = new Person("Froilanda");
 
-        farmHouse.addPerson(person1);
-        farmHouse.addPerson(person2);
+        farmHouse.add(person1);
+        farmHouse.add(person2);
 
         Assert.assertEquals(person1, farmHouse.get(0)); //Should retrieve/get Froilan by index 0
         Assert.assertEquals(person2, farmHouse.get(1)); //Should retrieve/get Froilanda by index 1
@@ -50,8 +47,8 @@ public class FarmHouseTest {
         Person person1 = new Person("Froilan");
         Person person2 = new Person("Froilanda");
 
-        farmHouse.addPerson(person1);
-        farmHouse.addPerson(person2);
+        farmHouse.add(person1);
+        farmHouse.add(person2);
 
         Assert.assertEquals(2, farmHouse.size()); //Farmhouse should have 2 people after addition
     }
@@ -61,8 +58,8 @@ public class FarmHouseTest {
         Person person1 = new Person("Froilan");
         Person person2 = new Person("Froilanda");
 
-        farmHouse.addPerson(person1);
-        farmHouse.addPerson(person2);
+        farmHouse.add(person1);
+        farmHouse.add(person2);
 
         Assert.assertTrue(farmHouse.contains(person1, person2)); //Farmhouse should contain Froilan and Froilanda
     }
