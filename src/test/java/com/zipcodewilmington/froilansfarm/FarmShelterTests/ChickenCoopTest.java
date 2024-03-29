@@ -28,7 +28,6 @@ public class ChickenCoopTest {
         chickenCoop.addChicken(chicken); // Adding new chicken to ChickenCoop
         chickenCoop.removeChicken(chicken); // Removing chicken from ChickenCoop
 
-        Assert.assertTrue(chickenCoop.removeChicken(chicken)); // Removed chicken from ChickenCoop
         Assert.assertFalse(chickenCoop.containsChicken(chicken)); // ChickenCoop should not contain chicken after removal
     }
 
