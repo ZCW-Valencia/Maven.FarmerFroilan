@@ -55,7 +55,9 @@ public class PilotTest {
         Pilot pilot = new Pilot("pilot");
         CropDuster cropDuster = new CropDuster(false, false, false);
         Assert.assertTrue(pilot.dismount(cropDuster));
-        Assert.assertFalse(cropDuster.getIsDismounted());
+        Assert.assertTrue(cropDuster.getIsDismounted());
     }
+
+
 
 }
