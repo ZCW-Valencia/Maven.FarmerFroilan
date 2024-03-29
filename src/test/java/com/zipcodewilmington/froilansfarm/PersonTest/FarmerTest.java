@@ -57,12 +57,12 @@ public class FarmerTest {
         Farmer farmer = new Farmer("Farmer1");
         Tractor tractor = new Tractor(false, false, false);
         Assert.assertTrue(farmer.dismount(tractor));
-        Assert.assertFalse(tractor.getIsBeingRidden());
+        Assert.assertTrue(tractor.getIsDismounted());
     }
 
     @Test
     public void MakeNoise(){
-        String speak = "Talk";
+        String speak = "Hi! I am a Farmer";
         Farmer farmer = new Farmer("person");
         Assert.assertEquals(speak,farmer.makeNoise());
 
