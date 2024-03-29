@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm.Food;
-import com.zipcodewilmington.froilansfarm.Crop;
-import com.zipcodewilmington.froilansfarm.CropRow;
+import com.zipcodewilmington.froilansfarm.*;
 import org.junit.Test;
 import org.junit.Assert;
 
@@ -124,5 +123,29 @@ public class EdibleFoodTests {
         Integer actualPotatoCropYield = potatoCropRow.yield();
 
         Assert.assertEquals(expectedPotatoCropYield, actualPotatoCropYield);
+    }
+
+    @Test
+    public void cornIsEdibleTest() {
+        Corn corn = new Corn();
+        Assert.assertTrue(corn.isEdible());
+    }
+
+    @Test
+    public void tomatoIsEdibleTest() {
+        Tomato tomato = new Tomato();
+        Assert.assertTrue(tomato.isEdible());
+    }
+
+    @Test
+    public void potatoIsEdibleTest() {
+        Potato potato = new Potato();
+        Assert.assertTrue(potato.isEdible());
+    }
+
+    @Test
+    public void eggIsEdibleTest() {
+        Egg egg = new Egg();
+        Assert.assertTrue(egg.isEdible());
     }
 }
