@@ -11,17 +11,33 @@ public class Vehicle implements NoiseMaker, Rideable {
     }
 
     @Override
-    public void getIsMounted(boolean isMounted) {
-        System.out.println(isMounted);
-
-    }
-    @Override
-    public void getIsBeingRidden(boolean isBeingRidden) {
+    public boolean getIsMounted() {
+        return false;
 
     }
 
     @Override
-    public void getIsDismounted(boolean isDismounted) {
+    public boolean getIsBeingRidden() {
+        return false;
+    }
+
+    @Override
+    public boolean getIsDismounted() {
+        return false;
+    }
+
+    @Override
+    public void setIsMounted(Object ride) {
+
+    }
+
+    @Override
+    public void setIsBeingRidden(Object ride) {
+
+    }
+
+    @Override
+    public void setIsDismounted(Object ride) {
 
     }
 }
