@@ -20,7 +20,7 @@ public class StableTest {
         stable.addHorse(horse1); //Adding new horse to Stable
         stable.addHorse(horse2);
 
-        Assert.assertEquals(1, stable.sizeHorse()); //Stable should have 1 horse after addition
+        Assert.assertEquals(2, stable.sizeHorse()); //Stable should have 1 horse after addition
     }
 
     @Test
@@ -28,9 +28,9 @@ public class StableTest {
         Horse horse = new Horse();
 
         stable.addHorse(horse);
-        stable.removeHorse(horse); //Removing horse from Stable
+        boolean isRemoved = stable.removeHorse(horse); //Removing horse from Stable
 
-        Assert.assertTrue(stable.removeHorse(horse)); // Removed horse from ChickenCoop
+        Assert.assertTrue(isRemoved); // Removed horse from Stable
         Assert.assertFalse(stable.containsHorse(horse)); // Stable should not contain horse after removal
     }
 
