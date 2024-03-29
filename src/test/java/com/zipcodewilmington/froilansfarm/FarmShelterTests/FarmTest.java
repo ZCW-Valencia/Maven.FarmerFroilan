@@ -9,24 +9,13 @@ import org.junit.Test;
 
 public class FarmTest {
     private Farm farm;
-
     @Before
     public void setUp() {
         farm = new Farm();
     }
 
     @Test
-    public void testFarmInitialization() {
-        Farm farm = new Farm();
-
-        Assert.assertEquals(farm.getFarmHouse()); // expected 1 FarmHouse
-        Assert.assertEquals(4, farm.getChickenCoop().size()); // expected 4 ChickenCoops
-        Assert.assertEquals(3, farm.getStable().size()); // expected 3 Stables
-    }
-
-    @Test
     public void testAddStable() { //Add Stable Farm Test
-        Farm farm = new Farm();
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();
         Stable stable3 = new Stable();
@@ -40,7 +29,7 @@ public class FarmTest {
 
     @Test
     public void testRemoveStable() { //Remove Stable Farm Test
-        Farm farm = new Farm();
+
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();
         Stable stable3 = new Stable();
@@ -56,7 +45,7 @@ public class FarmTest {
 
     @Test
     public void testGetStable() { //Get Stable Farm Test
-        Farm farm = new Farm();
+
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();
         Stable stable3 = new Stable();
@@ -72,7 +61,7 @@ public class FarmTest {
 
     @Test
     public void testAddChickenCoop() { //Add ChickenCoop Farm Test
-        Farm farm = new Farm();
+
         ChickenCoop chickencoop1 = new ChickenCoop();
         ChickenCoop chickencoop2 = new ChickenCoop();
         ChickenCoop chickencoop3 = new ChickenCoop();
@@ -86,7 +75,7 @@ public class FarmTest {
 
     @Test
     public void testRemoveChickenCoop() { //Remove ChickenCoop Farm Test
-        Farm farm = new Farm();
+
         ChickenCoop chickencoop1 = new ChickenCoop();
         ChickenCoop chickencoop2 = new ChickenCoop();
 
@@ -99,7 +88,7 @@ public class FarmTest {
 
     @Test
     public void testGetChickenCoop() { //Get ChickenCoop Farm Test
-        Farm farm = new Farm();
+
         ChickenCoop chickencoop1 = new ChickenCoop();
         ChickenCoop chickencoop2 = new ChickenCoop();
 

@@ -6,11 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class StableTest {
-    private Stable<Horse> Stable;
-
+    private Stable<Horse> stable;
     @Before
     public void setUp() {
-        Stable = new Stable();
+        stable = new Stable<>();
     }
 
     @Test
@@ -18,21 +17,21 @@ public class StableTest {
         Horse horse1 = new Horse();
         Horse horse2 = new Horse();
 
-        Stable.add(horse1); //Adding new horse to Stable
-        Stable.add(horse2);
+        stable.add(horse1); //Adding new horse to Stable
+        stable.add(horse2);
 
-        Assert.assertEquals(1, Stable.size()); //Stable should have 1 horse after addition
+        Assert.assertEquals(1, stable.size()); //Stable should have 1 horse after addition
     }
 
     @Test
     public void testRemoveHorse() { //Remove Horse Stable Test
         Horse horse = new Horse();
 
-        Stable.add(horse);
-        Stable.remove(horse); //Removing horse from Stable
+        stable.add(horse);
+        stable.remove(horse); //Removing horse from Stable
 
-        Assert.assertTrue(Stable.remove(horse)); // Removed horse from ChickenCoop
-        Assert.assertFalse(Stable.contains(horse)); // Stable should not contain horse after removal
+        Assert.assertTrue(stable.remove(horse)); // Removed horse from ChickenCoop
+        Assert.assertFalse(stable.contains(horse)); // Stable should not contain horse after removal
     }
 
 
@@ -44,13 +43,13 @@ public class StableTest {
         Horse horse4 = new Horse();
 
 
-        Stable.add(horse1);
-        Stable.add(horse2);
-        Stable.add(horse3);
-        Stable.add(horse4);
+        stable.add(horse1);
+        stable.add(horse2);
+        stable.add(horse3);
+        stable.add(horse4);
 
-        Assert.assertEquals(horse1, Stable.get(0)); //Should retrieve/get horse1 by index 0
-        Assert.assertEquals(horse4, Stable.get(3)); //Should retrieve/get horse4 by index 3
+        Assert.assertEquals(horse1, stable.get(0)); //Should retrieve/get horse1 by index 0
+        Assert.assertEquals(horse4, stable.get(3)); //Should retrieve/get horse4 by index 3
     }
 
     @Test
@@ -59,20 +58,20 @@ public class StableTest {
         Horse horse2 = new Horse();
         Horse horse3 = new Horse();
 
-        Stable.add(horse1);
-        Stable.add(horse2);
-        Stable.add(horse3);
+        stable.add(horse1);
+        stable.add(horse2);
+        stable.add(horse3);
 
-        Assert.assertEquals(3, Stable.size()); //Stable size should have 3 horses after addition
+        Assert.assertEquals(3, stable.size()); //Stable size should have 3 horses after addition
     }
 
     @Test
     public void testStableContains() {  //Stable Contains Test
         Horse horse = new Horse();
 
-        Stable.add(horse);
+        stable.add(horse);
 
-        Assert.assertTrue(Stable.contains(horse)); //Stable should contain horse
+        Assert.assertTrue(stable.contains(horse)); //Stable should contain horse
     }
 }
 
