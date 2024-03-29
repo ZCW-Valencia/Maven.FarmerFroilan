@@ -1,6 +1,9 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+import com.zipcodewilmington.froilansfarm.CropRow;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
+import com.zipcodewilmington.froilansfarm.Persons.Farmer;
 import org.junit.Test;
 import sun.jvm.hotspot.utilities.Assert;
 
@@ -17,20 +20,20 @@ public class TractorTest {
 
     @Test
     public void farmVehicleInheritanceTest2() {
-        FarmVehicle tractor = (FarmVehicle) (Object)new Tractor();
+        FarmVehicle tractor = (FarmVehicle) (Object)new Tractor(false, false, false);
         org.junit.Assert.assertTrue(tractor instanceof FarmVehicle);
     }
 
     @Test
     public void rideableInheritanceTest3() {
-        Rideable tractor = (Rideable) (Object)new Tractor();
+        Tractor tractor = new Tractor(false, false, false);
         org.junit.Assert.assertTrue(tractor instanceof Rideable);
     }
 
 
     @Test
     public void noiseMakerImplementsTest() {
-        Tractor tractor = new Tractor();
+        Tractor tractor = new Tractor(false, false, false);
         org.junit.Assert.assertTrue(tractor instanceof NoiseMaker);
     }
 
@@ -40,7 +43,7 @@ public class TractorTest {
     public void testIsMountedFalse(){
         Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
 
-        Assert.assertFalse(tractor.isMounted());
+        org.junit.Assert.assertFalse(tractor.getIsMounted());
 
     }
 
@@ -48,9 +51,9 @@ public class TractorTest {
     public void testIsMountedTrue(){
         Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
         Farmer froilan = new Farmer("Froilan");
-        tractor.setIsMounted(froilan.mount());  //assuming mount() is true, set mount() should just return true
+        froilan.mount(tractor);
 
-        Assert.assertTrue(tractor.isMounted());
+        org.junit.Assert.assertTrue(tractor.getIsMounted());
 
     }
 
@@ -58,32 +61,32 @@ public class TractorTest {
     public void testIsBeingRiddenFalse(){
         Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
 
-        Assert.assertFalse(tractor.isBeingRidden());
+        org.junit.Assert.assertFalse(tractor.getIsBeingRidden());
     }
 
     @Test
     public void testIsBeingRiddenTrue(){
         Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
         Farmer froilan = new Farmer("Froilan");
-        tractor.setIsBeingRidden(froilan.ride()); //ride() should just return true
+        froilan.ride(tractor);
 
-        Assert.assertTrue(tractor.isBeingRidden());
+        org.junit.Assert.assertTrue(tractor.getIsBeingRidden());
     }
 
     @Test
     public void testIsDismountedFalse(){
         Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
 
-        Assert.assertFalse(tractor.isDismounted());
+        org.junit.Assert.assertFalse(tractor.getIsDismounted());
     }
 
     @Test
     public void testIsDismountedTrue(){
         Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
         Farmer froilan = new Farmer("Froilan");
-        tractor.setIsDismounted(froilan.disMount()); //disMount() should just return true
+        froilan.dismount(tractor);
 
-        Assert.assertTrue(tractor.isDismounted());
+        org.junit.Assert.assertTrue(tractor.getIsDismounted());
     }
 
     //Tractor makeNoise
@@ -92,53 +95,27 @@ public class TractorTest {
         Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
         String expected = tractor.makeNoise();
 
-        Assert.assertEquals(expected, tractor.makeNoise());
+        org.junit.Assert.assertEquals(expected, tractor.makeNoise());
     }
 
     //Tractor harvest method
     @Test
     public void testHarvestFalse(){
         Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Field field = new Field();
+        CropRow cropRow = new CropRow<>(false, false);
+        tractor.harvest(cropRow);   //doing the harv
 
-        Assert.assertFalse(tractor.harvest(t cropRow, field.getHasBeenFertilized()));
-        // doesnt matter which crop, if either hasBeenFertilized or isBeingRidden is false, whole thing false
-        //this.IsBeingRidden is going to called in the method, no need as para
-    }
-
-    @Test
-    public void testHarvestFalse2(){
-        Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Field field = new Field(false, false, false); //hasBeenPlanted, hasBeenFertilized, hasBeenHarvested
-        Farmer froilan = new Farmer("Froilan");
-        tractor.setIsBeingRidden(froilan.ride()); //ride() should just return true
-
-        Assert.assertFalse(tractor.harvest(t cropRow, field.getHasBeenFertilized()));
-        // doesnt matter which crop, if either hasBeenFertilized or isBeingRidden is false, whole thing false
-        //this.IsBeingRidden is going to called in the method, no need as para
-    }
-
-    @Test
-    public void testHarvestFalse3(){
-        Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Field field = new Field(false, false, false); //hasBeenPlanted, hasBeenFertilized, hasBeenHarvested
-        field.setHasBeenFertilized(true);
-
-        Assert.assertFalse(tractor.harvest(t cropRow, field.getHasBeenFertilized()));
-        // doesnt matter which crop, if either hasBeenFertilized or isBeingRidden is false, whole thing false
-        //this.IsBeingRidden is going to called in the method, no need as para
+        org.junit.Assert.assertFalse(cropRow.getHasBeenHarvested());
     }
 
     @Test
     public void testHarvestTrue(){
         Tractor tractor = new Tractor(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Field field = new Field(false, false, false); //hasBeenPlanted, hasBeenFertilized, hasBeenHarvested
-        field.setHasBeenFertilized(true);
+        CropRow cropRow = new CropRow<>(false, false);
         Farmer froilan = new Farmer("Froilan");
-        tractor.setIsBeingRidden(froilan.ride()); //ride() should just return true
+        froilan.ride(tractor);
+        tractor.harvest(cropRow);
 
-        Assert.assertTrue(tractor.harvest(t cropRow, field.getHasBeenFertilized()));
-        //doesnt matter which crop, both hasBeenFertilized and isBeingRidden need to be true
-        //this.IsBeingRidden is going to called in the method, no need as para
+        org.junit.Assert.assertTrue(cropRow.getHasBeenHarvested());
     }
 }

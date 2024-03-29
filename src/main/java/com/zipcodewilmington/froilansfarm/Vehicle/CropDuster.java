@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.CropRow;
 import com.zipcodewilmington.froilansfarm.Interfaces.AirCraft;
 
 public class CropDuster <T> extends FarmVehicle implements AirCraft {
@@ -14,19 +16,21 @@ public class CropDuster <T> extends FarmVehicle implements AirCraft {
         this.isDismounted = isDismounted;
     }
 
-    public boolean fertilize(T cropRow){
+    public boolean fertilize(CropRow cropRow){
         if(this.isBeingRidden == true){
+            cropRow.setHasBeenFertilized(true);
+            cropRow.setHasBeenHarvested(false);
             return true;
         }
         return false;
     }
-    @Override
-    public boolean flying(){
-        if(this.isBeingRidden == true){
-            return true;
-        }
-        return false;
-    }
+//    @Override
+//    public boolean flying(){
+//        if(this.isBeingRidden == true){
+//            return true;
+//        }
+//        return false;
+//    }
     @Override
     public String makeNoise(){
         return "CropDuster noiseeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
@@ -62,5 +66,6 @@ public class CropDuster <T> extends FarmVehicle implements AirCraft {
     public void setIsDismounted(Object ride) {
         isDismounted = true;
         isMounted = false;
+        isBeingRidden = false;
     }
 }
