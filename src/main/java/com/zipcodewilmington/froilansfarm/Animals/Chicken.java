@@ -1,41 +1,51 @@
 package com.zipcodewilmington.froilansfarm.Animals;
 
+import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.Produce;
 
 public class Chicken extends Animal implements Produce {
 //    Instance Variables
-    private boolean hasBeenFertilized;
-
+    private boolean fertilized;
+    Crop corn = new Crop();
 
 
 //    Constructor
     public Chicken() {}
 
-    public Chicken(boolean hasBeenFertilized) {
-        this.hasBeenFertilized = hasBeenFertilized;
-    }
-
-
 
 //    Methods
-    public boolean getHasBeenFertilized() {
-        return hasBeenFertilized;
-    }
-
+    @Override
     public String makeNoise() {
         return "Cluck!";
     }
 
     @Override
-    public void eat(Produce food, int amount) {}
+    public void eat(Produce food, int amount) {
+        if (food == corn && amount == 1) {
+            hasEaten = true;
+        } else {
+            hasEaten = false;
+        }
+    }
 
     @Override
     public boolean hasEaten() {
-    return false;
+    return hasEaten;
 }
 
     @Override
     public int yield() {
-        return 0;
+        int edibleEgg = 0;
+        if (!fertilized) {
+            edibleEgg = 1;
+        } else {
+            return edibleEgg;
+        }
+        return edibleEgg;
+    }
+
+    public boolean hasBeenFertilized() {
+        fertilized = true;
+        return fertilized;
     }
 }

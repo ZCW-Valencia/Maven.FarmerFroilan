@@ -24,10 +24,10 @@ public class Pilot<T> extends Person implements Rider {
     public void eat(Produce food, int amount) {
     }
 
-    @Override
-    public boolean hasEaten() {
-        return false;
-    }
+//    @Override
+//    public boolean hasEaten() {
+//        return false;
+//    }
 
     @Override
     public String makeNoise() {
