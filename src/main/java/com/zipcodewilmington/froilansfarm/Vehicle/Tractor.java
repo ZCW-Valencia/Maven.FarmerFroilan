@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+import com.zipcodewilmington.froilansfarm.CropRow;
+
 public class Tractor<T> extends FarmVehicle{
     private boolean isMounted;
     private boolean isBeingRidden;
@@ -12,37 +14,45 @@ public class Tractor<T> extends FarmVehicle{
         this.isDismounted = isDismounted;
     }
 
-
     //need getters and setters
-
-
-    public boolean isMounted() {
+    @Override
+    public boolean getIsMounted() {
         return isMounted;
     }
 
-    public void setMounted(boolean mounted) {
-        isMounted = mounted;
-    }
-
-    public boolean isBeingRidden() {
+    @Override
+    public boolean getIsBeingRidden() {
         return isBeingRidden;
     }
 
-    public void setBeingRidden(boolean beingRidden) {
-        isBeingRidden = beingRidden;
-    }
-
-    public boolean isDismounted() {
+    @Override
+    public boolean getIsDismounted() {
         return isDismounted;
     }
 
-    public void setDismounted(boolean dismounted) {
-        isDismounted = dismounted;
+    @Override
+    public void setIsMounted(Object ride) {
+        isMounted = true;
+        isDismounted = false;
     }
 
-    //if isBeingRidden and hasBeenFertilized is both true, return true else false
-    public boolean harvest(T cropRow){
+    @Override
+    public void setIsBeingRidden(Object ride) {
+        isBeingRidden = true;
+    }
+
+    @Override
+    public void setIsDismounted(Object ride) {
+        isDismounted = true;
+        isMounted = false;
+        isBeingRidden = false;
+    }
+
+
+    public boolean harvest(CropRow cropRow){
         if(this.isBeingRidden == true){
+            cropRow.setHasBeenFertilized(false);
+            cropRow.setHasBeenHarvested(true);
             return true;
         }
         return false;

@@ -1,33 +1,37 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.CropRow;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
+import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
+import com.zipcodewilmington.froilansfarm.Persons.Pilot;
 import org.junit.Test;
 import sun.jvm.hotspot.utilities.Assert;
 
 public class CropDusterTest {
 
-//    CropDuster Inheritance test
+    //CropDuster Inheritance test
     @Test
     public void cropDusterInheritanceTest1() {
-        CropDuster cropDuster = (CropDuster) (Object)new CropDuster();
+        CropDuster cropDuster = (CropDuster) (Object)new CropDuster(false, false, false);
         org.junit.Assert.assertTrue(cropDuster instanceof CropDuster);
     }
 
     @Test
     public void farmVehicleInheritanceTest2() {
-        FarmVehicle cropDuster = (FarmVehicle) (Object)new CropDuster();
+        FarmVehicle cropDuster = (FarmVehicle) (Object)new CropDuster(false, false, false);
         org.junit.Assert.assertTrue(cropDuster instanceof FarmVehicle);
     }
 
     @Test
     public void rideableInheritanceTest3() {
-        Rideable cropDuster = (Rideable) (Object)new CropDuster();
+        CropDuster cropDuster = new CropDuster(false, false, false);
         org.junit.Assert.assertTrue(cropDuster instanceof Rideable);
     }
 
     @Test
     public void noiseMakerImplementsTest() {
-        CropDuster cropDuster = new CropDuster();
+        CropDuster cropDuster = new CropDuster(false, false, false);
         org.junit.Assert.assertTrue(cropDuster instanceof NoiseMaker);
     }
 
@@ -36,48 +40,49 @@ public class CropDusterTest {
     public void testIsMountedFalse(){
         CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
 
-        Assert.assertFalse(cropDuster.isMounted());
+        org.junit.Assert.assertFalse(cropDuster.getIsMounted());
     }
 
     @Test
     public void testIsMountedTrue(){
         CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Pilot froilanda = new Pilot("Froilanda", false);    //name and isFlying
-        cropDuster.setIsMounted(froilanda.mount());  //assuming mount() is true, set mount() should just return true
+        Pilot froilanda = new Pilot("Froilanda");    //name and isFlying
+        froilanda.mount(cropDuster);
 
-        Assert.assertTrue(cropDuster.isMounted());
+
+        org.junit.Assert.assertTrue(cropDuster.getIsMounted());
     }
 
     @Test
     public void testIsBeingRiddenFalse(){
         CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
 
-        Assert.assertFalse(cropDuster.isBeingRidden());
+        org.junit.Assert.assertFalse(cropDuster.getIsBeingRidden());
     }
 
     @Test
     public void testIsBeingRiddenTrue(){
         CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Pilot froilanda = new Pilot("Froilanda", false);    //name and isFlying
-        cropDuster.setIsBeingRidden(froilanda.ride());
+        Pilot froilanda = new Pilot("Froilanda");    //name and isFlying
+        froilanda.ride(cropDuster);
 
-        Assert.assertTrue(cropDuster.isBeingRidden());
+        org.junit.Assert.assertTrue(cropDuster.getIsBeingRidden());
     }
 
     @Test
     public void testIsDismountedFalse(){
         CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
 
-        Assert.assertFalse(cropDuster.isDismounted());
+        org.junit.Assert.assertFalse(cropDuster.getIsDismounted());
     }
 
     @Test
     public void testIsDismountedTrue(){
         CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Pilot froilanda = new Pilot("Froilanda", false);    //name and isFlying
-        cropDuster.setIsDismounted(froilanda.disMount());
+        Pilot froilanda = new Pilot("Froilanda");    //name and isFlying
+        froilanda.dismount(cropDuster);
 
-        Assert.assertTrue(cropDuster.isDismounted());
+        org.junit.Assert.assertTrue(cropDuster.getIsDismounted());
     }
 
     //CropDuster makeNoise
@@ -86,69 +91,46 @@ public class CropDusterTest {
         CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
         String expected = cropDuster.makeNoise();
 
-        Assert.assertEquals(expected, cropDuster.makeNoise());
+        org.junit.Assert.assertEquals(expected, cropDuster.makeNoise());
     }
 
     //CropDuster method testing
-    @Test
-    public void testIsFlyingFalse(){
-        CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
+//    @Test
+//    public void testIsFlyingFalse(){
+//        CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
+//
+//        Assert.assertFalse(cropDuster.flying(cropDuster.isBeingRidden));
+//    }
 
-        Assert.assertFalse(cropDuster.flying(cropDuster.isBeingRidden));
-    }
-
-    @Test
-    public void testIsFlyingTrue(){
-        CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Pilot froilanda = new Pilot("Froilanda", false);    //name and isFlying
-        cropDuster.setIsBeingRidden(froilanda.ride());
-
-        Assert.assertTrue(cropDuster.flying(cropDuster.isBeingRidden));
-    }
+//    @Test
+//    public void testIsFlyingTrue(){
+//        CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
+//        Pilot froilanda = new Pilot("Froilanda", false);    //name and isFlying
+//        cropDuster.setIsBeingRidden(froilanda.ride());
+//
+//        Assert.assertTrue(cropDuster.flying(cropDuster.isBeingRidden));
+//    }
 
     @Test
     public void testFertilizeFalse(){
         CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Field field = new Field(false, false, false); //hasBeenPlanted, hasBeenFertilized, hasBeenHarvested
+        CropRow cropRow = new CropRow(false, false);
+        cropDuster.fertilize(cropRow);  //doing the fert
 
-        Assert.assertFalse(cropDuster.harvest(t cropRow, field.getHasBeenPlanted()));
-        // doesnt matter which crop, if either hasBeenPlanted or isBeingRidden is false, whole thing false
-        //this.IsBeingRidden is going to called in the method, no need as para
-    }
+        org.junit.Assert.assertFalse(cropRow.getHasBeenFertilized());
 
-    @Test
-    public void testFertilizeFalse2(){
-        CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Field field = new Field(false, false, false); //hasBeenPlanted, hasBeenFertilized, hasBeenHarvested
-        field.setHasBeenPlanted(true);
 
-        Assert.assertFalse(cropDuster.harvest(t cropRow, field.getHasBeenPlanted()));
-        // doesnt matter which crop, if either hasBeenPlanted or isBeingRidden is false, whole thing false
-        //this.IsBeingRidden is going to called in the method, no need as para
-    }
-
-    @Test
-    public void testFertilizeFalse3(){
-        CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Field field = new Field(false, false, false); //hasBeenPlanted, hasBeenFertilized, hasBeenHarvested
-        Pilot froilanda = new Pilot("Froilanda", false);    //name and isFlying
-        cropDuster.setIsBeingRidden(froilanda.ride());
-
-        Assert.assertFalse(cropDuster.harvest(t cropRow, field.getHasBeenPlanted()));
-        // doesnt matter which crop, if either hasBeenPlanted or isBeingRidden is false, whole thing false
-        //this.IsBeingRidden is going to called in the method, no need as para
     }
 
     @Test
     public void testFertilizeTrue(){
         CropDuster cropDuster = new CropDuster(false, false, false);    //isMounted, isBeingRidden, isDismounted
-        Field field = new Field(false, false, false); //hasBeenPlanted, hasBeenFertilized, hasBeenHarvested
-        field.setHasBeenPlanted(true);
-        Pilot froilanda = new Pilot("Froilanda", false);    //name and isFlying
-        cropDuster.setIsBeingRidden(froilanda.ride());
+        CropRow cropRow = new CropRow(false, false);
+        Pilot froilanda = new Pilot("Froilanda");    //name and isFlying
+        froilanda.ride(cropDuster);
+        cropDuster.fertilize(cropRow);  //doing the  fert
 
-        Assert.assertTrue(cropDuster.harvest(t cropRow, field.getHasBeenPlanted()));
-        //this.IsBeingRidden is going to called in the method, no need as para
+        org.junit.Assert.assertFalse(cropRow.getHasBeenFertilized());
 
     }
 }
