@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm.AnimalTests;
 
 import com.zipcodewilmington.froilansfarm.Animals.Animal;
 import com.zipcodewilmington.froilansfarm.Animals.Chicken;
+import com.zipcodewilmington.froilansfarm.Corn;
 import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
@@ -46,11 +47,11 @@ public class ChickenTests {
     @Test
     public void eatTest1() {
         Chicken chicken = new Chicken();
-        Crop corn = new Crop();
+        Corn corn = new Corn();
 
         chicken.eat(corn, 1);
 
-        Assert.assertTrue(chicken.hasEaten());
+        Assert.assertTrue(chicken.getHasEaten());
     }
 
 //    @Test
