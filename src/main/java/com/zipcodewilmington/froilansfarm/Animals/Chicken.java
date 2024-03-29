@@ -7,7 +7,7 @@ import com.zipcodewilmington.froilansfarm.Produce;
 
 public class Chicken extends Animal implements Produce {
 //    Instance Variables
-    boolean fertilized;
+    boolean fertilized = false;
     boolean hasEaten;
 
 //    Constructor
