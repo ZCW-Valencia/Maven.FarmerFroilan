@@ -15,7 +15,6 @@ public class FlyingCropDusterTest {
 
         pilot.mount(cropDuster);
         pilot.ride(cropDuster);
-        //pilot.dismount(cropDuster);
         cropDuster.fertilize(cropRow);
 
         Assert.assertTrue(cropRow.getHasBeenFertilized());
