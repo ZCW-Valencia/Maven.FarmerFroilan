@@ -1,5 +1,4 @@
 package com.zipcodewilmington.froilansfarm.AnimalTests;
-
 import com.zipcodewilmington.froilansfarm.Animals.Animal;
 import com.zipcodewilmington.froilansfarm.Animals.Chicken;
 import com.zipcodewilmington.froilansfarm.Corn;
