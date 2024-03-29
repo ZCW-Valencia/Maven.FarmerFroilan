@@ -12,6 +12,7 @@ public class Vehicle implements NoiseMaker, Rideable {
     @Override
     public boolean getIsMounted() {
         return false;
+
     }
 
     @Override

@@ -1,11 +1,10 @@
 package com.zipcodewilmington.froilansfarm.Persons;
-
-//import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.Interfaces.Botanist;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 import com.zipcodewilmington.froilansfarm.Produce;
+import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 
 public class Farmer extends Person implements Rider, Botanist {
 
@@ -15,11 +14,10 @@ public class Farmer extends Person implements Rider, Botanist {
 
     @Override
     public void eat(Produce food, int amount) {
+        super.setHasEaten(true);
+
     }
-    @Override
-    public boolean hasEaten() {
-        return true;
-    }
+
 
     @Override
     public boolean plant(Crop crop) {
@@ -28,7 +26,7 @@ public class Farmer extends Person implements Rider, Botanist {
 
     @Override
     public String makeNoise() {
-        return null;
+        return "Hi! I am a Farmer";
     }
     @Override
     public boolean mount(Rideable ride) {
