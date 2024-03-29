@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Persons;
 import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.Food.Plate;
 import com.zipcodewilmington.froilansfarm.Interfaces.Botanist;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
@@ -14,8 +15,11 @@ public class Farmer extends Person implements Rider, Botanist {
     }
 
     @Override
-    public void eat(Produce food, int amount) {
-        hasEaten = true;
+    public void eat(Plate plate, int amount) {
+        if (plate != null && amount>0) {
+            hasEaten = true;
+        }
+        else hasEaten = false;
     }
 
     public boolean getHasEaten() {

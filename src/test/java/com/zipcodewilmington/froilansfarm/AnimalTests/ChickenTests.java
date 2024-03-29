@@ -3,6 +3,7 @@ import com.zipcodewilmington.froilansfarm.Animals.Animal;
 import com.zipcodewilmington.froilansfarm.Animals.Chicken;
 import com.zipcodewilmington.froilansfarm.Corn;
 import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.Food.Plate;
 import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Produce;
@@ -46,9 +47,9 @@ public class ChickenTests {
     @Test
     public void eatTest1() {
         Chicken chicken = new Chicken();
-        Corn corn = new Corn();
+        Plate plateCorn = new Plate();
 
-        chicken.eat(corn, 1);
+        chicken.eat(plateCorn, 1);
 
         Assert.assertTrue(chicken.getHasEaten());
     }
@@ -56,9 +57,9 @@ public class ChickenTests {
     @Test
     public void eatTest2() {
         Chicken chicken = new Chicken();
-        Corn corn = new Corn();
+        Plate plateCorn = new Plate();
 
-        chicken.eat(corn, 0);
+        chicken.eat(plateCorn, 0);
 
         Assert.assertFalse(chicken.getHasEaten());
     }

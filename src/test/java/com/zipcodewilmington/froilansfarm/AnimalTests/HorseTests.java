@@ -4,6 +4,7 @@ import com.zipcodewilmington.froilansfarm.Animals.Animal;
 import com.zipcodewilmington.froilansfarm.Animals.Horse;
 import com.zipcodewilmington.froilansfarm.Corn;
 import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.Food.Plate;
 import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
@@ -48,10 +49,10 @@ public class HorseTests {
     @Test
     public void eatTest1() {
         Horse horse = new Horse();
-        Corn corn = new Corn();
+        Plate plateCorn = new Plate();
         int amount = 5;
 
-        horse.eat(corn, amount);
+        horse.eat(plateCorn, amount);
 
         Assert.assertTrue(horse.getHasEaten());
     }
@@ -59,10 +60,10 @@ public class HorseTests {
     @Test
     public void eatTest2() {
         Horse horse = new Horse();
-        Corn corn = new Corn();
+        Plate plateCorn = new Plate();
         int amount = 0;
 
-        horse.eat(corn, amount);
+        horse.eat(plateCorn, amount);
 
         Assert.assertFalse(horse.getHasEaten());
     }

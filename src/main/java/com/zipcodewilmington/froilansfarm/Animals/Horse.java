@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Animals;
 
 import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.Food.Plate;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.Produce;
 
@@ -40,8 +41,8 @@ public class Horse extends Animal implements Rideable {
     }
 
     @Override
-    public void eat(Produce food, int amount) {
-        if (food != null && amount > 0) {
+    public void eat(Plate plate, int amount) {
+        if (plate != null && amount > 0) {
             hasEaten = true;
         } else {
             hasEaten = false;
