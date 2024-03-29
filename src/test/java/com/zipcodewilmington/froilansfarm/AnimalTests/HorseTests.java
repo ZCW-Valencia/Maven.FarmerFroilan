@@ -12,7 +12,6 @@ import org.junit.Test;
 public class HorseTests {
     boolean hasEaten;
 
-
     @Test
     public void horseInheritanceTest1() {
         Horse horse = new Horse();
@@ -35,12 +34,6 @@ public class HorseTests {
     public void horseImplementationTest2() {
         Horse horse = new Horse();
         Assert.assertTrue(horse instanceof Eater);
-    }
-
-    @Test
-    public void horseConstructorTest() {
-
-
     }
 
     @Test

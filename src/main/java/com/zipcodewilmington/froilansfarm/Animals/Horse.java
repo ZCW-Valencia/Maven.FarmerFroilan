@@ -2,7 +2,6 @@ package com.zipcodewilmington.froilansfarm.Animals;
 
 import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
-import com.zipcodewilmington.froilansfarm.Persons.Farmer;
 import com.zipcodewilmington.froilansfarm.Produce;
 
 public class Horse extends Animal implements Rideable {
@@ -24,15 +23,22 @@ public class Horse extends Animal implements Rideable {
 
 
 //    Methods
+    public boolean exercise() {
+        if (isMounted && isBeingRidden && !isDismounted) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public String makeNoise() {
         return "Neigh!";
     }
 
-//    @Override
-//    public boolean hasEaten() {
-//        return false;
-//    }
+    @Override
+    public boolean hasEaten() {
+        return hasEaten;
+    }
 
     @Override
     public void eat(Produce food, int amount) {
@@ -44,36 +50,34 @@ public class Horse extends Animal implements Rideable {
     }
 
     @Override
-    public void getIsMounted(boolean isMounted) {
-        this.isMounted = isMounted;
-    }
-
-    @Override
-    public void getIsBeingRidden(boolean isBeingRidden) {
-        this.isBeingRidden = isBeingRidden;
-    }
-
-    @Override
-    public void getIsDismounted(boolean isDismounted) {
-        this.isDismounted = isDismounted;
-    }
-
-    public boolean isMounted() {
+    public boolean getIsMounted() {
         return isMounted;
     }
 
-    public boolean isBeingRidden() {
+    @Override
+    public boolean getIsBeingRidden() {
         return isBeingRidden;
     }
 
-    public boolean isDismounted() {
+    @Override
+    public boolean getIsDismounted() {
         return isDismounted;
     }
 
-    public boolean exercise() {
-        if (isMounted && isBeingRidden && !isDismounted) {
-            return true;
-        }
-        return false;
+    @Override
+    public void setIsMounted(Object ride) {
+        isMounted = true;
+        isDismounted = false;
+    }
+
+    @Override
+    public void setIsBeingRidden(Object ride) {
+        isBeingRidden = true;
+    }
+
+    @Override
+    public void setIsDismounted(Object ride) {
+        isMounted = false;
+        isDismounted = true;
     }
 }

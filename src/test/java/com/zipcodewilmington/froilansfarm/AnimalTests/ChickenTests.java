@@ -8,8 +8,6 @@ import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Produce;
 import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
 public class ChickenTests {
     boolean hasEaten;
@@ -67,18 +65,12 @@ public class ChickenTests {
     }
 
     @Test
-    public void yieldTest1() {
+    public void yieldTest() {
         Chicken chicken = new Chicken();
-        boolean hasBeenFertilized = true;
+        chicken.hasBeenFertilized();
 
-        int ex
+        int expectedYield = 1;
         int actualYield = chicken.yield();
         Assert.assertEquals(expectedYield, actualYield);
-    }
-
-    @Test
-    public void yieldTest2() {
-        Chicken chicken = new Chicken();
-        boolean hasBeenFertilized = true;
     }
 }
