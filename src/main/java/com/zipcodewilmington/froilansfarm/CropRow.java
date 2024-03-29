@@ -49,4 +49,12 @@ public class CropRow <T extends Crop> extends ArrayList<T> implements Produce {
     public int yield() {
         return getHarvestedCrops();
     }
+
+    public void setHasBeenFertilized(Boolean hasBeenFertilized) {
+        this.hasBeenFertilized = hasBeenFertilized;
+    }
+
+    public void setHasBeenHarvested(Boolean hasBeenHarvested) {
+        this.hasBeenHarvested = true;
+    }
 }
