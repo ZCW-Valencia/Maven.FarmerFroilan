@@ -16,9 +16,6 @@ public class Pilot extends Person implements Rider {
         return isFlying;
     }
 
-    public void fly(Rideable ride) {
-        this.isFlying = true;
-    }
 
     @Override
     public void eat(Produce food, int amount) {
