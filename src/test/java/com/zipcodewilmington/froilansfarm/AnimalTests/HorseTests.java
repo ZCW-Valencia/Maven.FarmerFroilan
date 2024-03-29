@@ -6,6 +6,7 @@ import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
+import com.zipcodewilmington.froilansfarm.Persons.Farmer;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -36,6 +37,19 @@ public class HorseTests {
     }
 
     @Test
+    public void horseNonNullaryConstructorTest() {
+        boolean expectedParam1 = false;
+        boolean expectedParam2 = true;
+        boolean expectedParam3 = false;
+
+        Horse horse = new Horse(expectedParam1, expectedParam2, expectedParam3);
+
+        Assert.assertEquals(expectedParam1, horse.getIsMounted());
+        Assert.assertEquals(expectedParam2, horse.getIsBeingRidden());
+        Assert.assertEquals(expectedParam3, horse.getIsDismounted());
+    }
+
+    @Test
     public void makeNoiseTest() {
         Horse horse = new Horse();
         String expectedNoise = "Neigh!";
@@ -58,7 +72,7 @@ public class HorseTests {
     public void eatTest2() {
         Horse horse = new Horse();
         Crop corn = new Crop();
-        int amount = 5;
+        int amount = 0;
 
         horse.eat(corn, amount);
 

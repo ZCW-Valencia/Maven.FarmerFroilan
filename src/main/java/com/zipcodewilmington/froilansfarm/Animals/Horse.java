@@ -73,6 +73,7 @@ public class Horse extends Animal implements Rideable {
     @Override
     public void setIsDismounted(Object ride) {
         isMounted = false;
+        isBeingRidden = false;
         isDismounted = true;
     }
 }
