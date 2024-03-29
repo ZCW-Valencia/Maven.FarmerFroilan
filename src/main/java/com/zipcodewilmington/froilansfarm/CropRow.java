@@ -3,11 +3,12 @@ package com.zipcodewilmington.froilansfarm;
 import java.util.ArrayList;
 
 public class CropRow <T extends Crop> extends ArrayList<T> implements Produce {
-    Boolean hasBeenFertilized = false;
-    Boolean hasBeenHarvested = false;
+    Boolean hasBeenFertilized;
+    Boolean hasBeenHarvested;
 
 
     public CropRow(boolean hasBeenFertilized, boolean hasBeenHarvested) {
+        super();
         this.hasBeenFertilized = hasBeenFertilized;
         this.hasBeenHarvested = hasBeenHarvested;
     }
@@ -42,6 +43,6 @@ public class CropRow <T extends Crop> extends ArrayList<T> implements Produce {
     }
 
     public void setHasBeenHarvested(Boolean hasBeenHarvested) {
-        this.hasBeenHarvested = hasBeenHarvested;
+        this.hasBeenHarvested = true;
     }
 }
