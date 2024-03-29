@@ -1,8 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Crops;
-import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.*;
+import com.zipcodewilmington.froilansfarm.Interfaces.isEdible;
 import com.zipcodewilmington.froilansfarm.Persons.Farmer;
 import com.zipcodewilmington.froilansfarm.Persons.Pilot;
-import com.zipcodewilmington.froilansfarm.Produce;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import org.junit.Test;
 import org.junit.Assert;
@@ -84,27 +84,22 @@ public class CropTests {
     }
 
     @Test
-    public void cropInstanceOfProduceTest() {
-        Crop crop = new Crop();
-        Assert.assertTrue(crop instanceof Produce);
+    public void tomatoInstanceOfIsEdibleTest() {
+        Tomato tomato = new Tomato();
+        Assert.assertTrue(tomato instanceof isEdible);
     }
 
     @Test
-    public void tomatoPlantInstanceOfProduceTest() {
-        Crop tomatoPlant = new Crop();
-        Assert.assertTrue(tomatoPlant instanceof Produce);
+    public void cornInstanceOfIsEdibleTest() {
+        Corn corn = new Corn();
+        Assert.assertTrue(corn instanceof isEdible);
     }
 
     @Test
-    public void cornStalkInstanceOfProduceTest() {
-        Crop cornStalk = new Crop();
-        Assert.assertTrue(cornStalk instanceof Produce);
+    public void potatoInstanceOfIsEdibleTest() {
+        Potato potato = new Potato();
+        Assert.assertTrue(potato instanceof isEdible);
     }
 
-    @Test
-    public void potatoRootInstanceOfProduceTest() {
-        Crop potatoRoot = new Crop();
-        Assert.assertTrue(potatoRoot instanceof Produce);
-    }
 
 }

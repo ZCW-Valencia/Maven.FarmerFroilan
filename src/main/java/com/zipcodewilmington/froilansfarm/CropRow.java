@@ -25,18 +25,6 @@ public class CropRow <T extends Crop> extends ArrayList<T> implements Produce {
         return hasBeenHarvested;
     }
 
-    public Integer getHarvestedCrops() {
-        Integer result = null;
-        if (this.hasBeenHarvested == true) {
-            result = this.size();
-        }
-        return result;
-    }
-
-    @Override
-    public int yield() {
-        return getHarvestedCrops();
-    }
 
     public void setHasBeenFertilized(Boolean hasBeenFertilized) {
         this.hasBeenFertilized = hasBeenFertilized;
@@ -44,5 +32,10 @@ public class CropRow <T extends Crop> extends ArrayList<T> implements Produce {
 
     public void setHasBeenHarvested(Boolean hasBeenHarvested) {
         this.hasBeenHarvested = true;
+    }
+
+    @Override
+    public int yield() {
+        return this.size();
     }
 }

@@ -18,10 +18,6 @@ public abstract class Person <T>implements NoiseMaker, Eater {
     public String getName() {
         return name;
     }
-    @Override
-    public boolean hasEaten() {
-        return hasEaten;
-    }
 
     public void setHasEaten(Boolean hasEaten) {
         this.hasEaten = hasEaten;

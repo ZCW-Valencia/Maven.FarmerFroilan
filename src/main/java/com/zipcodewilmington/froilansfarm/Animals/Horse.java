@@ -9,6 +9,7 @@ public class Horse extends Animal implements Rideable {
     private boolean isMounted;
     private boolean isBeingRidden;
     private boolean isDismounted;
+    private boolean hasEaten;
 
 
 //    Constructor
@@ -18,6 +19,10 @@ public class Horse extends Animal implements Rideable {
         this.isMounted = isMounted;
         this.isBeingRidden = isBeingRidden;
         this.isDismounted = isDismounted;
+    }
+
+    public Horse(boolean hasEaten) {
+        this.hasEaten = hasEaten;
     }
 
 
@@ -36,12 +41,20 @@ public class Horse extends Animal implements Rideable {
 
     @Override
     public void eat(Produce food, int amount) {
-        Crop corn = new Crop();
-        if (food == corn && amount >= 5) {
-            super.setHasEaten(true);
+        if (food != null && amount > 0) {
+            hasEaten = true;
         } else {
-            super.setHasEaten(false);
+            hasEaten = false;
         }
+    }
+
+    public boolean getHasEaten() {
+        return hasEaten;
+    }
+
+    @Override
+    public void setHasEaten(boolean hasEaten) {
+        this.hasEaten = hasEaten;
     }
 
     @Override
@@ -76,4 +89,5 @@ public class Horse extends Animal implements Rideable {
         isBeingRidden = false;
         isDismounted = true;
     }
+
 }
