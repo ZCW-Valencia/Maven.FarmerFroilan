@@ -36,6 +36,7 @@ public class CropRow <T extends Crop> extends ArrayList<T> implements Produce {
 
     @Override
     public int yield() {
+        if (this.hasBeenHarvested == true);
         return this.size();
     }
 }
