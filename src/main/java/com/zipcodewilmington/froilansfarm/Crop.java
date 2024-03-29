@@ -25,6 +25,10 @@ public class Crop implements Produce {
         return hasBeenHarvested;
     }
 
+    public void setHasBeenPlanted(boolean hasBeenPlanted) {
+        this.hasBeenPlanted = hasBeenPlanted;
+    }
+
     @Override
     public int yield() {
         return 0;

@@ -19,7 +19,6 @@ public class CropDuster <T> extends FarmVehicle implements AirCraft {
     public boolean fertilize(CropRow cropRow){
         if(this.isBeingRidden == true){
             cropRow.setHasBeenFertilized(true);
-            cropRow.setHasBeenHarvested(false);
             return true;
         }
         return false;
