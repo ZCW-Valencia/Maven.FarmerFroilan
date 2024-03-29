@@ -1,12 +1,11 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
-import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.CropRow;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.Persons.Pilot;
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
+
 
 public class CropDusterTest {
 
