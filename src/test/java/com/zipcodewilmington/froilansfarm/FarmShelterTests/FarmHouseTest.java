@@ -1,75 +1,70 @@
 package com.zipcodewilmington.froilansfarm.FarmShelterTests;
+import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.CropRow;
 import com.zipcodewilmington.froilansfarm.FarmShelter.FarmHouse;
+import com.zipcodewilmington.froilansfarm.Persons.Farmer;
 import com.zipcodewilmington.froilansfarm.Persons.Person;
+import com.zipcodewilmington.froilansfarm.Persons.Pilot;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class FarmHouseTest {
-    private FarmHouse farmHouse;
-
+    private FarmHouse<Person> farmHouse;
     @Before
     public void setUp() {
-        farmhouse = new FarmHouse();
+        farmHouse = new FarmHouse<>();
     }
 
     @Test
     public void testAddPerson() { //Add Person FarmHouse Test
-        Person person1 = new Person("Froilan");
+        Farmer farmer = new Farmer("Froilan");
 
-        farmHouse.add(person1); //Adding new person to FarmHouse
+        farmHouse.add(farmer); //Adding new person to FarmHouse
 
-        Assert.assertEquals(1, farmHouse.size()); // Farmhouse should have 1 person after addition
-        Assert.assertTrue(farmHouse.contains(person1)); // FarmHouse should contain Froilan after addition
+        Assert.assertEquals(1, farmHouse.size()); // Farmhouse should have 1 farmer after addition
+        Assert.assertTrue(farmHouse.contains(farmer)); // FarmHouse should contain farmer after addition
     }
 
     @Test
     public void testRemovePerson() { //Remove Person FarmHouse Test
-        Person person2 = new Person("Froilanda");
+        Pilot pilot = new Pilot("Froilanda");
 
-        farmHouse.add(person2);
-        farmHouse.remove(person2); //Removing Froilanda from FarmHouse
+        farmHouse.add(pilot);
+        farmHouse.remove(pilot); //Removing person from FarmHouse
 
-        Assert.assertFalse(farmHouse.contains(person2)); //FarmHouse should not contain Froilanda after removal
+        Assert.assertFalse(farmHouse.contains(pilot)); //FarmHouse should not contain pilot after removal
     }
 
     @Test
     public void testGetPerson() { //Get Person FarmHouse Test
-        Person person1 = new Person("Froilan");
-        Person person2 = new Person("Froilanda");
+        Farmer farmer = new Farmer("Froilan");
+        Pilot pilot = new Pilot("Froilanda");
 
-        farmHouse.add(person1);
-        farmHouse.add(person2);
+        farmHouse.add(farmer);
+        farmHouse.add(pilot);
 
-        Assert.assertEquals(person1, farmHouse.get(0)); //Should retrieve/get Froilan by index 0
-        Assert.assertEquals(person2, farmHouse.get(1)); //Should retrieve/get Froilanda by index 1
+        Assert.assertEquals(farmer, farmHouse.get(0)); //Should retrieve/get farmer by index 0
+        Assert.assertEquals(pilot, farmHouse.get(1)); //Should retrieve/get pilot by index 1
     }
 
     @Test
     public void testFarmHouseSize() { //FarmHouse Size Test
-        Person person1 = new Person("Froilan");
-        Person person2 = new Person("Froilanda");
+        Farmer farmer = new Farmer("Froilan");
+        Pilot pilot = new Pilot("Froilanda");
 
-        farmHouse.add(person1);
-        farmHouse.add(person2);
+        farmHouse.add(farmer);
+        farmHouse.add(pilot);
 
         Assert.assertEquals(2, farmHouse.size()); //Farmhouse should have 2 people after addition
     }
 
     @Test
     public void testFarmHouseContains() { //FarmHouse Contains Test
-        Person person1 = new Person("Froilan");
-        Person person2 = new Person("Froilanda");
+        Farmer farmer = new Farmer("Froilan");
 
-        farmHouse.add(person1);
-        farmHouse.add(person2);
+        farmHouse.add(farmer);
 
-        Assert.assertTrue(farmHouse.contains(person1, person2)); //Farmhouse should contain Froilan and Froilanda
-    }
-
-    @Test
-    public void testFarmHouseExtendsPerson() { // FarmHouse Extends Person Test
-
-
+        Assert.assertTrue(farmHouse.contains(farmer)); //Farmhouse should contain frarmer
     }
 }

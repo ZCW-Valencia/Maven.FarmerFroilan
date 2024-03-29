@@ -49,7 +49,7 @@ public class FarmerTest {
         Farmer farmer = new Farmer("Farmer1");
         Tractor tractor = new Tractor(false, false, false);
         Assert.assertTrue(farmer.ride(tractor));
-        Assert.assertTrue(tractor.isBeingRidden());
+        Assert.assertTrue(tractor.getIsBeingRidden());
     }
 
     @Test
@@ -64,7 +64,7 @@ public class FarmerTest {
     public void MakeNoise(){
         String speak = "Talk";
         Farmer farmer = new Farmer("person");
-        Assert.assertEquals(speak,farmer.makesNoise());
+        Assert.assertEquals(speak,farmer.makeNoise());
 
     }
 

@@ -9,10 +9,10 @@ public class Vehicle implements NoiseMaker, Rideable {
     public String makeNoise() {
         return null;
     }
-
     @Override
     public boolean getIsMounted() {
         return false;
+
     }
 
     @Override
