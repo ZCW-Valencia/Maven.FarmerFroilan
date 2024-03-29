@@ -10,6 +10,7 @@ import org.junit.Test;
 
 public class CropDusterTest {
 
+
     //CropDuster Inheritance test
     @Test
     public void cropDusterInheritanceTest1() {
@@ -24,7 +25,13 @@ public class CropDusterTest {
     }
 
     @Test
-    public void rideableInheritanceTest3() {
+    public void farmVehicleInheritanceTest3() {
+        FarmVehicle cropDuster = (FarmVehicle) (Object)new CropDuster(false, false, false);
+        org.junit.Assert.assertTrue(cropDuster instanceof Vehicle);
+    }
+
+    @Test
+    public void rideableInheritanceTest4() {
         CropDuster cropDuster = new CropDuster(false, false, false);
         org.junit.Assert.assertTrue(cropDuster instanceof Rideable);
     }
