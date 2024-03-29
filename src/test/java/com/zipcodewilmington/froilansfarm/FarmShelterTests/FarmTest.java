@@ -9,105 +9,77 @@ import org.junit.Test;
 
 public class FarmTest {
     private Farm farm;
-
     @Before
     public void setUp() {
         farm = new Farm();
     }
-
-    @Test
-    public void testFarmInitialization() {
-        Farm farm = new Farm();
-
-        Assert.assertEquals(farm.getFarmHouse()); // expected 1 FarmHouse
-        Assert.assertEquals(4, farm.getChickenCoop().size()); // expected 4 ChickenCoops
-        Assert.assertEquals(3, farm.getStable().size()); // expected 3 Stables
-    }
-
     @Test
     public void testAddStable() { //Add Stable Farm Test
-        Farm farm = new Farm();
-        Stable stable1 = new Stable();
-        Stable stable2 = new Stable();
-        Stable stable3 = new Stable();
+        Stable stable = new Stable();
 
-        farm.add(stable1); //Adding new stable to Farm
-        farm.add(stable2); //Adding new stable to Farm
-        farm.add(stable3); //Adding new stable to Farm
+        farm.addStable(stable); //Adding new stable to Farm
 
-        Assert.assertTrue(farm.get().contains(stable1, stable2, stable3)); // Farm should have 3 Stable after addition
+        Assert.assertTrue(farm.getStable().contains(stable)); // Farm should contain stable after addition
     }
 
     @Test
     public void testRemoveStable() { //Remove Stable Farm Test
-        Farm farm = new Farm();
+
         Stable stable1 = new Stable();
         Stable stable2 = new Stable();
         Stable stable3 = new Stable();
 
 
-        farm.add(stable1);
-        farm.add(stable2);
-        farm.add(stable3);
-        farm.remove(stable2); //Removing Stable from Farm
+        farm.addStable(stable1);
+        farm.addStable(stable2);
+        farm.addStable(stable3);
+        farm.removeStable(stable2); //Removing Stable from Farm
 
-        Assert.assertFalse(farm.contains(stable2)); //Farm should not contain stable2 after removal
+        Assert.assertFalse(farm.getStable().contains(stable2)); //Farm should not contain stable2 after removal
     }
 
     @Test
     public void testGetStable() { //Get Stable Farm Test
-        Farm farm = new Farm();
-        Stable stable1 = new Stable();
-        Stable stable2 = new Stable();
-        Stable stable3 = new Stable();
+        Stable stable = new Stable();
 
-        farm.add(stable1);
-        farm.add(stable2);
-        farm.add(stable3);
+        farm.addStable(stable);
 
-        Assert.assertEquals(stable1, farm.get(0)); //Should retrieve/get stable1 by index 0
-        Assert.assertEquals(stable2, farm.get(1)); //Should retrieve/get stable2 by index 1
-        Assert.assertEquals(stable3, farm.get(2)); //Should retrieve/get stable2 by index 2
+        Assert.assertEquals(stable, farm.getStable()); //Should retrieve/get stable1 by index 0
     }
 
     @Test
     public void testAddChickenCoop() { //Add ChickenCoop Farm Test
-        Farm farm = new Farm();
-        ChickenCoop chickencoop1 = new ChickenCoop();
-        ChickenCoop chickencoop2 = new ChickenCoop();
-        ChickenCoop chickencoop3 = new ChickenCoop();
+        ChickenCoop chickencoop = new ChickenCoop();
 
-        farm.add(chickencoop1); //Adding new stable to Farm
-        farm.add(chickencoop2); //Adding new stable to Farm
-        farm.add(chickencoop3); //Adding new stable to Farm
+        farm.addChickenCoop(chickencoop); //Adding new stable to Farm
 
-        Assert.assertTrue(farm.get().contains(chickencoop1, chickencoop2, chickencoop3));
+        Assert.assertTrue(farm.getChickenCoop().contains(chickencoop));
     }
 
     @Test
     public void testRemoveChickenCoop() { //Remove ChickenCoop Farm Test
-        Farm farm = new Farm();
+
         ChickenCoop chickencoop1 = new ChickenCoop();
         ChickenCoop chickencoop2 = new ChickenCoop();
 
-        farm.add(chickencoop1);
-        farm.add(chickencoop2);
-        farm.remove(chickencoop2); //Removing ChickenCoop2 from Farm
+        farm.addChickenCoop(chickencoop1);
+        farm.addChickenCoop(chickencoop2);
+        farm.removeChickenCoop(chickencoop2); //Removing ChickenCoop2 from Farm
 
-        Assert.assertFalse(farm.get().contains(chickencoop2)); //Farm should not contain chickencoop2 after removal
+        Assert.assertFalse(farm.getChickenCoop().contains(chickencoop2)); //Farm should not contain chickencoop2 after removal
     }
 
     @Test
     public void testGetChickenCoop() { //Get ChickenCoop Farm Test
-        Farm farm = new Farm();
+
         ChickenCoop chickencoop1 = new ChickenCoop();
         ChickenCoop chickencoop2 = new ChickenCoop();
 
-        farm.add(chickencoop1);
-        farm.add(chickencoop2);
+        farm.addChickenCoop(chickencoop1);
+        farm.addChickenCoop(chickencoop2);
 
-        Assert.assertEquals(chickencoop1, farm.get(0)); //Should retrieve/get chickencoop1 by index 0
-        Assert.assertEquals(chickencoop2, farm.get(1)); //Should retrieve/get chickencoop2 by index 1
+        Assert.assertEquals(chickencoop1, farm.getChickenCoop()); //Should retrieve/get chickencoop1 by index 0
+        Assert.assertEquals(chickencoop2, farm.getChickenCoop()); //Should retrieve/get chickencoop2 by index 1
     }
 
 }
