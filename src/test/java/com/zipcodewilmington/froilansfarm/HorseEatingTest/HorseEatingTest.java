@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.HorseEatingTest;
 
 import com.zipcodewilmington.froilansfarm.Animals.Horse;
+import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.FarmShelter.Farm;
 import com.zipcodewilmington.froilansfarm.FarmShelter.Stable;
 import com.zipcodewilmington.froilansfarm.Persons.Farmer;
@@ -42,6 +43,10 @@ public class HorseEatingTest {
         stable3.addHorse(horse8);
         stable3.addHorse(horse9);
         stable3.addHorse(horse10);
+
+        Crop cornStalk = new Crop(false);
+
+        //do thing
 
     }
 }
