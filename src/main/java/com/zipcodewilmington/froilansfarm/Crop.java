@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Crop implements Produce {
+public class Crop{
     private boolean hasBeenPlanted;
     private boolean hasBeenFertilized;
     private boolean hasBeenHarvested;
@@ -29,8 +29,4 @@ public class Crop implements Produce {
         this.hasBeenPlanted = hasBeenPlanted;
     }
 
-    @Override
-    public int yield() {
-        return 0;
-    }
 }

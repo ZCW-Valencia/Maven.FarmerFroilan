@@ -5,6 +5,7 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Persons.Farmer;
 import com.zipcodewilmington.froilansfarm.Persons.Person;
+import com.zipcodewilmington.froilansfarm.Tomato;
 import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 import org.junit.Assert;
 import org.junit.Test;
@@ -71,10 +72,10 @@ public class FarmerTest {
     @Test
     public void TestEatFood(){
         Farmer farmer = new Farmer("person");
-        Crop crop = new Crop();
+        Tomato tomato = new Tomato();
         int amount = 5;
-        farmer.eat(crop,amount);
-        Assert.assertTrue(farmer.hasEaten());
+        farmer.eat(tomato,amount);
+        Assert.assertTrue(farmer.getHasEaten());
     }
 
 }
