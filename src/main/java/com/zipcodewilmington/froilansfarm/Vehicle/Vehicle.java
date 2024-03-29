@@ -12,6 +12,7 @@ public class Vehicle implements NoiseMaker, Rideable {
 
     @Override
     public void getIsMounted(boolean isMounted) {
+        System.out.println(isMounted);
 
     }
     @Override

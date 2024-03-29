@@ -64,7 +64,7 @@ public class FarmerTest {
     public void MakeNoise(){
         String speak = "Talk";
         Farmer farmer = new Farmer("person");
-        Assert.assertEquals(speak,farmer.makesNoise());
+        Assert.assertEquals(speak,farmer.makeNoise());
 
     }
 
