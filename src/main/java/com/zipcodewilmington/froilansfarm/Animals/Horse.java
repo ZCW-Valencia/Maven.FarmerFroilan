@@ -9,7 +9,6 @@ public class Horse extends Animal implements Rideable {
     private boolean isMounted;
     private boolean isBeingRidden;
     private boolean isDismounted;
-    Crop corn = new Crop();
 
 
 //    Constructor
@@ -36,16 +35,12 @@ public class Horse extends Animal implements Rideable {
     }
 
     @Override
-    public boolean hasEaten() {
-        return hasEaten;
-    }
-
-    @Override
     public void eat(Produce food, int amount) {
-        if (food == corn && amount == 5) {
-            hasEaten = true;
+        Crop corn = new Crop();
+        if (food == corn && amount >= 5) {
+            super.setHasEaten(true);
         } else {
-            hasEaten = false;
+            super.setHasEaten(false);
         }
     }
 

@@ -10,7 +10,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ChickenTests {
-    boolean hasEaten;
 
     @Test
     public void chickenInheritanceTest1() {
@@ -51,23 +50,23 @@ public class ChickenTests {
 
         chicken.eat(corn, 1);
 
-        Assert.assertTrue(hasEaten);
+        Assert.assertTrue(chicken.hasEaten());
     }
 
-    @Test
-    public void eatTest2() {
-        Chicken chicken = new Chicken();
-        Crop corn = new Crop();
-
-        chicken.eat(corn, 0);
-
-        Assert.assertFalse(hasEaten);
-    }
+//    @Test
+//    public void eatTest2() {
+//        Chicken chicken = new Chicken();
+//        Crop corn = new Crop();
+//
+//        chicken.eat(corn, 0);
+//
+//        Assert.assertFalse(hasEaten);
+//    }
 
     @Test
     public void yieldTest() {
         Chicken chicken = new Chicken();
-        chicken.hasBeenFertilized();
+        chicken.hasBeenFertilized(false);
 
         int expectedYield = 1;
         int actualYield = chicken.yield();

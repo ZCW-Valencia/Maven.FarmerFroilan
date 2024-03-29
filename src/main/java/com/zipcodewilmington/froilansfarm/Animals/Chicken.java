@@ -5,8 +5,7 @@ import com.zipcodewilmington.froilansfarm.Produce;
 
 public class Chicken extends Animal implements Produce {
 //    Instance Variables
-    private boolean fertilized;
-    Crop corn = new Crop();
+    boolean fertilized;
 
 
 //    Constructor
@@ -21,17 +20,13 @@ public class Chicken extends Animal implements Produce {
 
     @Override
     public void eat(Produce food, int amount) {
-        if (food == corn && amount == 1) {
-            hasEaten = true;
+        Crop corn = new Crop();
+        if (food == corn && amount >= 1) {
+            super.setHasEaten(true);
         } else {
-            hasEaten = false;
+            super.setHasEaten(false);
         }
     }
-
-    @Override
-    public boolean hasEaten() {
-    return hasEaten;
-}
 
     @Override
     public int yield() {
@@ -44,8 +39,7 @@ public class Chicken extends Animal implements Produce {
         return edibleEgg;
     }
 
-    public boolean hasBeenFertilized() {
-        fertilized = true;
-        return fertilized;
+    public void hasBeenFertilized(boolean fertilized) {
+        this.fertilized = fertilized;
     }
 }
