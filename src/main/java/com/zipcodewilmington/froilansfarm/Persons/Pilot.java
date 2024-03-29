@@ -6,6 +6,7 @@ import com.zipcodewilmington.froilansfarm.Produce;
 
 public class Pilot extends Person implements Rider {
     private Boolean isFlying = false;
+    private Boolean hasEaten;
 
     public Pilot(String name) {
         super(name);
@@ -18,15 +19,8 @@ public class Pilot extends Person implements Rider {
 
     @Override
     public void eat(Produce food, int amount) {
-        super.setHasEaten(true);
+        hasEaten = true;
     }
-
-    @Override
-    public boolean hasEaten() {
-        return true;
-    }
-
-
     @Override
     public String makeNoise() {
         return "Hey! I am a Pilot";
