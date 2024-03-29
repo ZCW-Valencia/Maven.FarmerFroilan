@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Persons;
 
+import com.zipcodewilmington.froilansfarm.Food.Plate;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 import com.zipcodewilmington.froilansfarm.Produce;
@@ -18,7 +19,7 @@ public class Pilot extends Person implements Rider {
 
 
     @Override
-    public void eat(Produce food, int amount) {
+    public void eat(Plate plate, int amount) {
         hasEaten = true;
     }
     @Override
