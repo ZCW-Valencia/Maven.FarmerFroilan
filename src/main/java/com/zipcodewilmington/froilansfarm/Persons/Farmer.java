@@ -7,6 +7,7 @@ import com.zipcodewilmington.froilansfarm.Produce;
 import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 
 public class Farmer extends Person implements Rider, Botanist {
+    private boolean hasEaten;
 
     public Farmer(String name) {
         super(name);
@@ -14,10 +15,12 @@ public class Farmer extends Person implements Rider, Botanist {
 
     @Override
     public void eat(Produce food, int amount) {
-        super.setHasEaten(true);
-
+        hasEaten = true;
     }
 
+    public boolean getHasEaten() {
+        return hasEaten;
+    }
 
     @Override
     public boolean plant(Crop crop) {
