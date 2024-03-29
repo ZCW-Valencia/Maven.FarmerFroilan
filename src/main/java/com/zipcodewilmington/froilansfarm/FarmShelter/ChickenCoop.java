@@ -7,23 +7,23 @@ import java.util.ArrayList;
 public class ChickenCoop <T extends Chicken> {
     private ArrayList<T> list = new ArrayList<>();
 
-    public void add(T chicken) {
+    public void addChicken(T chicken) {
         list.add(chicken);
     }
 
-    public boolean remove(T chicken){
+    public boolean removeChicken(T chicken){
         return list.remove(chicken);
     }
 
-    public T get(int index){
+    public T getChicken(int index){
         return list.get(index);
     }
 
-    public int size(){
+    public int sizeChicken(){
         return list.size();
     }
 
-    public boolean contains(T chicken){
+    public boolean containsChicken(T chicken){
         return list.contains(chicken);
     }
 }

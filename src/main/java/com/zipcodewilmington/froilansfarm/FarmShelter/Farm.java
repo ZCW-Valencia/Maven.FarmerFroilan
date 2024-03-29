@@ -1,36 +1,46 @@
 package com.zipcodewilmington.froilansfarm.FarmShelter;
-
 import com.zipcodewilmington.froilansfarm.Persons.Person;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Farm {
-    private FarmHouse<Person> farmHouse = new FarmHouse<>();
-    private List<Stable> stables = new ArrayList<>();
-    private List<ChickenCoop> chickenCoops = new ArrayList<>();
+    private FarmHouse<Person> farmHouse;
+    private List<Stable> stables;
+    private List<ChickenCoop> chickenCoops;
 
-    public Farm(){
+    public Farm() {
+        this.farmHouse = new FarmHouse<>();
+        this.stables = new ArrayList<>();
+        this.chickenCoops = new ArrayList<>();
     }
 
-    public void add(Stable stable){
+    public FarmHouse<Person> getFarmHouse() {
+        return farmHouse;
+    }
+
+    public void addStable(Stable stable) {
         stables.add(stable);
     }
 
-    public void remove(Stable stable){
-        stables.remove(stable);
+    public boolean removeStable(Stable stable) {
+        return stables.remove(stable);
     }
 
-    public Stable get(int index){
-        return stables.get(index);
+    public List<Stable> getStable() {
+        return stables;
     }
 
-    public int size(){
-        return stables.size();
+    public void addChickenCoop(ChickenCoop chicken) {
+        chickenCoops.add(chicken);
     }
 
+    public boolean removeChickenCoop(ChickenCoop chicken) {
+        return chickenCoops.remove(chicken);
+    }
 
-
-
-
+    public List<ChickenCoop> getChickenCoop() {
+        return chickenCoops;
+    }
 }
+
