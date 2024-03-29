@@ -5,7 +5,7 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 import com.zipcodewilmington.froilansfarm.Produce;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 
-public class Pilot<T> extends Person implements Rider {
+public class Pilot extends Person implements Rider {
     private Boolean isFlying = false;
 
     public Pilot(String name) {
@@ -24,10 +24,10 @@ public class Pilot<T> extends Person implements Rider {
     public void eat(Produce food, int amount) {
     }
 
-//    @Override
-//    public boolean hasEaten() {
-//        return false;
-//    }
+    @Override
+    public boolean hasEaten() {
+       return false;
+    }
 
     @Override
     public String makeNoise() {
