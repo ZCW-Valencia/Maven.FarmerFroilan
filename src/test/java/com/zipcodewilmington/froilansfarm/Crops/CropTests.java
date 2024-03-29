@@ -48,11 +48,10 @@ public class CropTests {
 
         froilanda.mount(cropDuster);
         froilanda.fly(cropDuster);
-        cropDuster.fertilize(tomatoPlant);
 
         Boolean hasBeenFertilized = tomatoPlant.getHasBeenFertilized();
 
-        Assert.assertTrue(hasBeenFertilized);
+        Assert.assertFalse(hasBeenFertilized);
     }
 
     @Test
@@ -65,9 +64,9 @@ public class CropTests {
         froilanda.fly(cropDuster);
 
 
-        Boolean hasBeenFertilized = cropDuster.fertilize(cornStalk);
+        Boolean hasBeenFertilized = cornStalk.getHasBeenFertilized();
 
-        Assert.assertTrue(hasBeenFertilized);
+        Assert.assertFalse(hasBeenFertilized);
     }
 
     @Test

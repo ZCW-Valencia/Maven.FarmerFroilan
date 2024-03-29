@@ -21,7 +21,9 @@ public class CropRowTests {
         CropRow<Crop> tomatoCropRow = new CropRow<>(false, false);
 
         //Overload this method when time comes
-        tomatoCropRow.addCrop(tomatoPlant1, tomatoPlant2, tomatoPlant3);
+        tomatoCropRow.add(tomatoPlant1);
+        tomatoCropRow.add(tomatoPlant2);
+        tomatoCropRow.add(tomatoPlant3);
         froilanda.mount(cropDuster);
         froilanda.fly(cropDuster);
         cropDuster.fertilize(tomatoCropRow);
@@ -41,7 +43,9 @@ public class CropRowTests {
         CropRow<Crop> cornCropRow = new CropRow<>(false, false);
 
         //Overload this method when time comes
-        cornCropRow.addCrop(cornStalk1, cornStalk2, cornStalk3);
+        cornCropRow.add(cornStalk1);
+        cornCropRow.add(cornStalk2);
+        cornCropRow.add(cornStalk3);
 
         cropDuster.fertilize(cornCropRow);
 
@@ -60,7 +64,9 @@ public class CropRowTests {
         CropRow<Crop> potatoCropRow = new CropRow<>(false, false);
 
         //Overload this method when time comes
-        potatoCropRow.addCrop(potatoRoot1, potatoRoot2, potatoRoot3);
+        potatoCropRow.add(potatoRoot1);
+        potatoCropRow.add(potatoRoot2);
+        potatoCropRow.add(potatoRoot3);
         froilanda.mount(cropDuster);
         froilanda.fly(cropDuster);
 

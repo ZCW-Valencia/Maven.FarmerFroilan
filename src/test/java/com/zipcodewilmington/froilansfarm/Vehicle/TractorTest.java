@@ -5,7 +5,10 @@ import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.Persons.Farmer;
 import org.junit.Test;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 235a162da1a4e357e1e437fa9d60a06e22b12fe8
 
 import java.util.ArrayList;
 
