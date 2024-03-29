@@ -3,9 +3,8 @@ package com.zipcodewilmington.froilansfarm.Persons;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
 import com.zipcodewilmington.froilansfarm.Produce;
-import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 
-public class Pilot<T> extends Person implements Rider {
+public class Pilot extends Person implements Rider {
     private Boolean isFlying = false;
 
     public Pilot(String name) {
@@ -16,36 +15,44 @@ public class Pilot<T> extends Person implements Rider {
         return isFlying;
     }
 
-    public void fly(T ride) {
+    public void fly(Rideable ride) {
         this.isFlying = true;
     }
 
     @Override
     public void eat(Produce food, int amount) {
+        super.setHasEaten(true);
     }
 
     @Override
     public boolean hasEaten() {
-        return false;
+        return true;
     }
+
 
     @Override
     public String makeNoise() {
-        return null;
+        return "Hey! I am a Pilot";
     }
 
     @Override
     public boolean mount(Rideable ride) {
-        return false;
+        ride.setIsMounted(ride);
+        return ride.getIsMounted();
+
     }
 
     @Override
     public boolean ride(Rideable ride) {
-        return false;
+        ride.setIsBeingRidden(ride);
+        return ride.getIsBeingRidden();
     }
 
     @Override
     public boolean dismount(Rideable ride) {
-        return false;
+        ride.setIsDismounted(ride);
+        return ride.getIsDismounted();
     }
+
 }
+
