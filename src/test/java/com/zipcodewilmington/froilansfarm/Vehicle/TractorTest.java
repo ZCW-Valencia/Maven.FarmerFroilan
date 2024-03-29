@@ -29,6 +29,12 @@ public class TractorTest {
         org.junit.Assert.assertTrue(tractor instanceof Rideable);
     }
 
+    @Test
+    public void farmVehicleInheritanceTest4() {
+        FarmVehicle tractor = (FarmVehicle) (Object)new Tractor(false, false, false);
+        org.junit.Assert.assertTrue(tractor instanceof Vehicle);
+    }
+
 
     @Test
     public void noiseMakerImplementsTest() {
