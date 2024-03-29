@@ -9,6 +9,8 @@ public class CropRow <T extends Crop> extends ArrayList<T> implements Produce {
 
     public CropRow(boolean hasBeenFertilized, boolean hasBeenHarvested) {
         super();
+        this.hasBeenFertilized = hasBeenFertilized;
+        this.hasBeenHarvested = hasBeenHarvested;
     }
 
     public CropRow() {
