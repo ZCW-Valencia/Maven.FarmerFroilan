@@ -49,7 +49,7 @@ public class FarmerTest {
         Farmer farmer = new Farmer("Farmer1");
         Tractor tractor = new Tractor(false, false, false);
         Assert.assertTrue(farmer.ride(tractor));
-        Assert.assertTrue(tractor.isBeingRidden());
+        Assert.assertTrue(tractor.getIsBeingRidden());
     }
 
     @Test
