@@ -14,7 +14,9 @@ public class EdibleFoodTests {
 
         CropRow<Crop> tomatoCropRow = new CropRow<>(true, true);
 
-        tomatoCropRow.addCrop(tomato1, tomato2, tomato3);
+        tomatoCropRow.add(tomato1);
+        tomatoCropRow.add(tomato2);
+        tomatoCropRow.add(tomato3);
 
         Integer expectedTomatoCropYield = 3;
         Integer actualTomatoCropRowYield = tomatoCropRow.yield();
@@ -32,7 +34,11 @@ public class EdibleFoodTests {
 
         CropRow<Crop> tomatoCropRow = new CropRow<>(true, true);
 
-        tomatoCropRow.addCrop(tomato1, tomato2, tomato3, tomato4, tomato5);
+        tomatoCropRow.add(tomato1);
+        tomatoCropRow.add(tomato2);
+        tomatoCropRow.add(tomato3);
+        tomatoCropRow.add(tomato4);
+        tomatoCropRow.add(tomato5);
 
         Integer expectedTomatoCropYield = 5;
         Integer actualTomatoCropRowYield = tomatoCropRow.yield();
@@ -48,7 +54,9 @@ public class EdibleFoodTests {
 
         CropRow<Crop> cornCropRow = new CropRow(true, true);
 
-        cornCropRow.addCrop(corn1, corn2, corn3);
+        cornCropRow.add(corn1);
+        cornCropRow.add(corn2);
+        cornCropRow.add(corn3);
 
         Integer expectedCornCropYield = 3;
         Integer actualCornCropYield = cornCropRow.yield();
@@ -66,7 +74,11 @@ public class EdibleFoodTests {
 
         CropRow<Crop> cornCropRow = new CropRow<>(true, true);
 
-        cornCropRow.addCrop(corn1, corn2, corn3, corn4, corn5);
+        cornCropRow.add(corn1);
+        cornCropRow.add(corn2);
+        cornCropRow.add(corn3);
+        cornCropRow.add(corn4);
+        cornCropRow.add(corn5);
 
         Integer expectedCornCropYield = 5;
         Integer actualCornCropYield = cornCropRow.yield();
@@ -82,7 +94,9 @@ public class EdibleFoodTests {
 
         CropRow<Crop> potatoCropRow = new CropRow(true, true);
 
-        potatoCropRow.addCrop(potato1, potato2, potato3);
+        potatoCropRow.add(potato1);
+        potatoCropRow.add(potato2);
+        potatoCropRow.add(potato3);
 
         Integer expectedPotatoCropYield = 3;
         Integer actualPotatoCropYield = potatoCropRow.yield();
@@ -100,7 +114,11 @@ public class EdibleFoodTests {
 
         CropRow<Crop> potatoCropRow = new CropRow(true, true);
 
-        potatoCropRow.addCrop(potato1, potato2, potato3, potato4, potato5);
+        potatoCropRow.add(potato1);
+        potatoCropRow.add(potato2);
+        potatoCropRow.add(potato3);
+        potatoCropRow.add(potato4);
+        potatoCropRow.add(potato5);
 
         Integer expectedPotatoCropYield = 5;
         Integer actualPotatoCropYield = potatoCropRow.yield();
