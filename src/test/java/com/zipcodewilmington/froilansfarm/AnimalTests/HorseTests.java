@@ -7,6 +7,7 @@ import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
+import com.zipcodewilmington.froilansfarm.Persons.Farmer;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -59,11 +60,11 @@ public class HorseTests {
     public void eatTest2() {
         Horse horse = new Horse();
         Corn corn = new Corn();
-        int amount = 5;
+        int amount = 0;
 
         horse.eat(corn, amount);
 
-        Assert.assertTrue(horse.getHasEaten());
+        Assert.assertFalse(horse.getHasEaten());
     }
 
     @Test
@@ -80,5 +81,57 @@ public class HorseTests {
         boolean result = horse.exercise();
 
         Assert.assertFalse(result);
+    }
+
+    @Test
+    public void getIsMountedTest1() {
+        Horse horse = new Horse();
+        Farmer farmer = new Farmer("froilan");
+
+        farmer.mount(horse);
+
+        Assert.assertTrue(horse.getIsMounted());
+    }
+
+    @Test
+    public void getIsMountedTest2() {
+        Horse horse = new Horse();
+
+        Assert.assertFalse(horse.getIsMounted());
+    }
+
+    @Test
+    public void getIsBeingRiddenTest1() {
+        Horse horse = new Horse();
+        Farmer farmer = new Farmer("froilan");
+
+        farmer.ride(horse);
+
+        Assert.assertTrue(horse.getIsBeingRidden());
+    }
+
+    @Test
+    public void getIsBeingRiddenTest2() {
+        Horse horse = new Horse();
+
+        Assert.assertFalse(horse.getIsBeingRidden());
+    }
+
+    @Test
+    public void getIsDisMountedTest() {
+        Horse horse = new Horse();
+        Farmer farmer = new Farmer("froilan");
+
+        farmer.mount(horse);
+        farmer.dismount(horse);
+
+        Assert.assertTrue(horse.getIsDismounted());
+    }
+
+    @Test
+    public void getIsDismountedTest2() {
+        Horse horse = new Horse();
+
+        Assert.assertFalse(horse.getIsDismounted());
     }
 }
