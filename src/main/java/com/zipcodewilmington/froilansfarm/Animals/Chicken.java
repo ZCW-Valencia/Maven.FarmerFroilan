@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.Animals;
 import com.zipcodewilmington.froilansfarm.Corn;
 import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.CropRow;
+import com.zipcodewilmington.froilansfarm.Food.Plate;
 import com.zipcodewilmington.froilansfarm.Produce;
 
 public class Chicken extends Animal implements Produce {
@@ -21,8 +22,8 @@ public class Chicken extends Animal implements Produce {
     }
 
     @Override
-    public void eat(Produce food, int amount) {
-        if (food!= null && amount >= 1) {
+    public void eat(Plate plate, int amount) {
+        if (plate != null && amount > 0) {
             hasEaten = true;
         } else {
             hasEaten = false;
