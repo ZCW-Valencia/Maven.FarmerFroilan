@@ -10,7 +10,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class HorseTests {
-    boolean hasEaten;
 
     @Test
     public void horseInheritanceTest1() {
@@ -48,20 +47,22 @@ public class HorseTests {
     public void eatTest1() {
         Horse horse = new Horse();
         Crop corn = new Crop();
+        int amount = 5;
 
-        horse.eat(corn, 5);
+        horse.eat(corn, amount);
 
-        Assert.assertTrue(hasEaten);
+        Assert.assertTrue(horse.hasEaten());
     }
 
     @Test
     public void eatTest2() {
         Horse horse = new Horse();
         Crop corn = new Crop();
+        int amount = 5;
 
-        horse.eat(corn, 1);
+        horse.eat(corn, amount);
 
-        Assert.assertFalse(hasEaten);
+        Assert.assertFalse(horse.hasEaten());
     }
 
     @Test
