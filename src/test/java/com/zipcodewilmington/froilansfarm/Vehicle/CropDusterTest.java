@@ -129,7 +129,7 @@ public class CropDusterTest {
         froilanda.ride(cropDuster);
         cropDuster.fertilize(cropRow);  //doing the  fert
 
-        org.junit.Assert.assertFalse(cropRow.getHasBeenFertilized());
+        org.junit.Assert.assertTrue(cropRow.getHasBeenFertilized());
 
     }
 }
