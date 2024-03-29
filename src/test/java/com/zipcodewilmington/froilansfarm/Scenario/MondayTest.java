@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Scenario;
 
+import com.zipcodewilmington.froilansfarm.Crop;
 import com.zipcodewilmington.froilansfarm.CropRow;
 import com.zipcodewilmington.froilansfarm.Persons.Pilot;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
@@ -12,11 +13,11 @@ public class MondayTest {
     public void mondayTest() {
         Pilot froilanda = new Pilot("Froilanda");
         CropDuster plane = new CropDuster(false, false, true);
-        CropRow row1 = new CropRow(false, false);
-        CropRow row2 = new CropRow(false, false);
-        CropRow row3 = new CropRow(false, false);
-        CropRow row4 = new CropRow(false, false);
-        CropRow row5 = new CropRow(false, false);
+        CropRow<Crop> row1 = new CropRow<>(false, false);
+        CropRow<Crop> row2 = new CropRow<>(false, false);
+        CropRow<Crop> row3 = new CropRow<>(false, false);
+        CropRow<Crop> row4 = new CropRow<>(false, false);
+        CropRow<Crop> row5 = new CropRow<>(false, false);
 
         froilanda.mount(plane);
         froilanda.ride(plane);
