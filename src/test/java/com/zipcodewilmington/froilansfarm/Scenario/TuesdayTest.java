@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TuesdayTest {
     @Test
-    public void tuesday() {
+    public void tuesdayTest() {
 
         Farmer farmer = new Farmer("Froilan");
         Tractor tractor = new Tractor(false, false, false);
