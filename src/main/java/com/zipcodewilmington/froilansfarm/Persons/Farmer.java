@@ -21,6 +21,7 @@ public class Farmer extends Person implements Rider, Botanist {
 
     @Override
     public boolean plant(Crop crop) {
+        crop.setHasBeenPlanted(true);
         return true;
     }
 

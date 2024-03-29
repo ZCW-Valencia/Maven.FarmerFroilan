@@ -25,7 +25,7 @@ public class CropRowTests {
         tomatoCropRow.add(tomatoPlant2);
         tomatoCropRow.add(tomatoPlant3);
         froilanda.mount(cropDuster);
-        froilanda.fly(cropDuster);
+        froilanda.ride(cropDuster);
         cropDuster.fertilize(tomatoCropRow);
 
         Boolean hasBeenFertilized = tomatoCropRow.getHasBeenFertilized();
@@ -46,6 +46,7 @@ public class CropRowTests {
         cornCropRow.add(cornStalk1);
         cornCropRow.add(cornStalk2);
         cornCropRow.add(cornStalk3);
+        froilanda.ride(cropDuster);
 
         cropDuster.fertilize(cornCropRow);
 
@@ -68,7 +69,7 @@ public class CropRowTests {
         potatoCropRow.add(potatoRoot2);
         potatoCropRow.add(potatoRoot3);
         froilanda.mount(cropDuster);
-        froilanda.fly(cropDuster);
+        froilanda.ride(cropDuster);
 
         Boolean hasBeenFertilized = potatoCropRow.getHasBeenFertilized();
 

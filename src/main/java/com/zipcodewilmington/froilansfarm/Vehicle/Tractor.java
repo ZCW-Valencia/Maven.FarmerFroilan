@@ -51,7 +51,6 @@ public class Tractor<T> extends FarmVehicle{
 
     public boolean harvest(CropRow cropRow){
         if(this.isBeingRidden == true){
-            cropRow.setHasBeenFertilized(false);
             cropRow.setHasBeenHarvested(true);
             return true;
         }

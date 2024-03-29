@@ -47,7 +47,7 @@ public class CropTests {
         CropDuster cropDuster = new CropDuster(false, false, false);
 
         froilanda.mount(cropDuster);
-        froilanda.fly(cropDuster);
+        froilanda.ride(cropDuster);
 
         Boolean hasBeenFertilized = tomatoPlant.getHasBeenFertilized();
 
@@ -61,7 +61,7 @@ public class CropTests {
         CropDuster cropDuster = new CropDuster(false, false, false);
 
         froilanda.mount(cropDuster);
-        froilanda.fly(cropDuster);
+        froilanda.ride(cropDuster);
 
 
         Boolean hasBeenFertilized = cornStalk.getHasBeenFertilized();
@@ -76,7 +76,7 @@ public class CropTests {
         CropDuster cropDuster = new CropDuster(false, false, false);
 
         froilanda.mount(cropDuster);
-        froilanda.fly(cropDuster);
+        froilanda.ride(cropDuster);
 
         Boolean hasBeenFertilized = potatoRoot.getHasBeenFertilized();
 
