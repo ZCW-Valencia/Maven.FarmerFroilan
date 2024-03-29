@@ -1,7 +1,11 @@
 package com.zipcodewilmington.froilansfarm.FarmShelterTests;
 import com.zipcodewilmington.froilansfarm.FarmShelter.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.FarmShelter.Farm;
+import com.zipcodewilmington.froilansfarm.FarmShelter.FarmHouse;
 import com.zipcodewilmington.froilansfarm.FarmShelter.Stable;
+import com.zipcodewilmington.froilansfarm.Persons.Farmer;
+import com.zipcodewilmington.froilansfarm.Persons.Person;
+import com.zipcodewilmington.froilansfarm.Persons.Pilot;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +17,7 @@ public class FarmTest {
     public void setUp() {
         farm = new Farm();
     }
+
     @Test
     public void testAddStable() { //Add Stable Farm Test
         Stable stable = new Stable();
@@ -44,7 +49,7 @@ public class FarmTest {
 
         farm.addStable(stable);
 
-        Assert.assertEquals(stable, farm.getStable()); //Should retrieve/get stable1 by index 0
+        Assert.assertEquals(stable, farm.getStable().get(0)); //Should retrieve/get stable1 by index 0
     }
 
     @Test
@@ -78,8 +83,14 @@ public class FarmTest {
         farm.addChickenCoop(chickencoop1);
         farm.addChickenCoop(chickencoop2);
 
-        Assert.assertEquals(chickencoop1, farm.getChickenCoop()); //Should retrieve/get chickencoop1 by index 0
-        Assert.assertEquals(chickencoop2, farm.getChickenCoop()); //Should retrieve/get chickencoop2 by index 1
+        Assert.assertEquals(chickencoop1, farm.getChickenCoop().get(0)); //Should retrieve/get chickencoop1 by index 0
+        Assert.assertEquals(chickencoop2, farm.getChickenCoop().get(1)); //Should retrieve/get chickencoop2 by index 1
     }
 
+    @Test
+    public void testGetFarmHouse(){
+        FarmHouse<Person> retrievedFarmHouse = farm.getFarmHouse();
+
+        Assert.assertNotNull(retrievedFarmHouse);
+    }
 }

@@ -19,28 +19,29 @@ public class Farm {
         return farmHouse;
     }
 
+    public List<Stable> getStable() {
+        return stables;
+    }
+
+    public List<ChickenCoop> getChickenCoop() {
+        return chickenCoops;
+    }
+
+
     public void addStable(Stable stable) {
         stables.add(stable);
     }
 
-    public boolean removeStable(Stable stable) {
-        return stables.remove(stable);
-    }
-
-    public List<Stable> getStable() {
-        return stables;
+    public void removeStable(Stable stable) {
+        stables.remove(stable);
     }
 
     public void addChickenCoop(ChickenCoop chicken) {
         chickenCoops.add(chicken);
     }
 
-    public boolean removeChickenCoop(ChickenCoop chicken) {
-        return chickenCoops.remove(chicken);
-    }
-
-    public List<ChickenCoop> getChickenCoop() {
-        return chickenCoops;
+    public void removeChickenCoop(ChickenCoop chicken) {
+        chickenCoops.remove(chicken);
     }
 }
 
