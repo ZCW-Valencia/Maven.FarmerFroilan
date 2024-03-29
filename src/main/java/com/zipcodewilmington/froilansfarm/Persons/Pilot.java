@@ -24,6 +24,13 @@ public class Pilot<T> extends Person implements Rider {
         super.setHasEaten(true);
     }
 
+<<<<<<< HEAD
+=======
+//    @Override
+//    public boolean hasEaten() {
+//        return false;
+//    }
+>>>>>>> f5f3cced6e4a4fb722b999bb59e1cb08a57466c6
 
     @Override
     public String makeNoise() {
