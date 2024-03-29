@@ -54,18 +54,18 @@ public class ChickenTests {
         Assert.assertTrue(chicken.getHasEaten());
     }
 
-//    @Test
-//    public void eatTest2() {
-//        Chicken chicken = new Chicken();
-//        Crop corn = new Crop();
-//
-//        chicken.eat(corn, 0);
-//
-//        Assert.assertFalse(hasEaten);
-//    }
+    @Test
+    public void eatTest2() {
+        Chicken chicken = new Chicken();
+        Corn corn = new Corn();
+
+        chicken.eat(corn, 0);
+
+        Assert.assertFalse(chicken.getHasEaten());
+    }
 
     @Test
-    public void yieldTest() {
+    public void yieldTest1() {
         Chicken chicken = new Chicken();
         chicken.hasBeenFertilized(false);
 
@@ -73,4 +73,16 @@ public class ChickenTests {
         int actualYield = chicken.yield();
         Assert.assertEquals(expectedYield, actualYield);
     }
+
+    @Test
+    public void yieldTest2() {
+        Chicken chicken = new Chicken();
+        chicken.hasBeenFertilized(true);
+
+        int expectedYield = 0;
+        int actualYield = chicken.yield();
+        Assert.assertEquals(expectedYield, actualYield);
+    }
+
+
 }
