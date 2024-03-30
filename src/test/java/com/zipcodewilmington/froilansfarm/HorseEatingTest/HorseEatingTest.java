@@ -1,14 +1,65 @@
 package com.zipcodewilmington.froilansfarm.HorseEatingTest;
 
 import com.zipcodewilmington.froilansfarm.Animals.Horse;
+import com.zipcodewilmington.froilansfarm.Corn;
 import com.zipcodewilmington.froilansfarm.Crop;
+import com.zipcodewilmington.froilansfarm.CropRow;
 import com.zipcodewilmington.froilansfarm.FarmShelter.Farm;
 import com.zipcodewilmington.froilansfarm.FarmShelter.Stable;
+import com.zipcodewilmington.froilansfarm.Food.Plate;
 import com.zipcodewilmington.froilansfarm.Persons.Farmer;
 import com.zipcodewilmington.froilansfarm.Persons.Pilot;
+import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
+import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class HorseEatingTest {
+
+    private int horseCornYield;
+    private Plate horsePlate = new Plate();
+
+    @Before
+    public void setUp() {
+        Farmer froilan = new Farmer("froilan");
+        Pilot froilanda = new Pilot("froilanda");
+        CropDuster cropDuster = new CropDuster(false, false, false);
+        Tractor tractor = new Tractor(false, false, false);
+        Crop cornStalk = new Crop(false);
+        CropRow<Crop> cornCropRow = new CropRow<>(false, false);
+        froilan.plant(cornStalk);
+        cornCropRow.add(cornStalk);
+        froilanda.mount(cropDuster);
+        froilanda.ride(cropDuster);
+        cropDuster.fertilize(cornCropRow);
+        froilan.mount(tractor);
+        froilan.ride(tractor);
+        tractor.harvest(cornCropRow);
+
+        horseCornYield = cornCropRow.yield();
+
+        for (int i = 0; i < horseCornYield; i++) {
+            horsePlate.add(new Corn());
+        }
+
+
+
+    }
+
+    @Test
+    public void createPlateTest1() {
+        boolean plateContainsCorn = false;
+
+        for (Object item: horsePlate) {
+            if (item instanceof Corn)
+            plateContainsCorn = true;
+            break;
+        }
+
+        Assert.assertTrue(plateContainsCorn);
+    }
+
 
     @Test
     public void horseEating(){
@@ -44,7 +95,27 @@ public class HorseEatingTest {
         stable3.addHorse(horse9);
         stable3.addHorse(horse10);
 
-        Crop cornStalk = new Crop(false);
+        horse1.eat(horsePlate, 1);
+        horse2.eat(horsePlate, 1);
+        horse3.eat(horsePlate, 1);
+        horse4.eat(horsePlate, 1);
+        horse5.eat(horsePlate, 1);
+        horse6.eat(horsePlate, 1);
+        horse7.eat(horsePlate, 1);
+        horse8.eat(horsePlate, 1);
+        horse9.eat(horsePlate, 1);
+        horse10.eat(horsePlate, 1);
+        Assert.assertTrue(horse1.getHasEaten());
+        Assert.assertTrue(horse2.getHasEaten());
+        Assert.assertTrue(horse3.getHasEaten());
+        Assert.assertTrue(horse4.getHasEaten());
+        Assert.assertTrue(horse5.getHasEaten());
+        Assert.assertTrue(horse6.getHasEaten());
+        Assert.assertTrue(horse7.getHasEaten());
+        Assert.assertTrue(horse8.getHasEaten());
+        Assert.assertTrue(horse9.getHasEaten());
+        Assert.assertTrue(horse10.getHasEaten());
+
 
         //do thing
 
